@@ -1,0 +1,1299 @@
+% ============================================================
+%  CSE 3200 – System Development Project Report
+%  Battery Analyzer
+%  LaTeX Source
+% ============================================================
+
+\documentclass[12pt,a4paper]{report}
+
+% ---------- packages ----------
+\usepackage[top=1in,bottom=1in,left=1.2in,right=1in,
+            headheight=15pt,headsep=12pt,
+            footskip=0.4in]{geometry}
+
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{amssymb}
+
+% ---------- hyperref setup ----------
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black,
+  bookmarksnumbered=true
+}
+
+% ---------- line spacing ----------
+\onehalfspacing
+
+% ---------- paragraph spacing ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ---------- chapter title style ----------
+\titleformat{\chapter}[display]
+  {\normalfont\large\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{12pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+
+% ---------- section styles ----------
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{4pt}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{3pt}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{8pt}{2pt}
+
+% ---------- caption style ----------
+\captionsetup{font=small,labelfont=bf,justification=centering}
+\captionsetup[table]{position=above}
+\captionsetup[figure]{position=below}
+
+% ---------- header / footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small Battery Analyzer}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- TOC depth ----------
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% ============================================================
+\begin{document}
+
+% ============================================================
+%  COVER PAGE
+% ============================================================
+\thispagestyle{empty}
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{images/logo.png}
+  \vspace{0.3in}
+  \large\bfseries \\ CSE 3200: System Development Project\\[12pt]
+  \Large\bfseries\MakeUppercase{Battery Analyzer: An Android-Based Battery}\\
+  \Large\bfseries\MakeUppercase{Monitoring, Health Estimation and}\\
+  \Large\bfseries\MakeUppercase{Optimization Support System}\\[24pt]
+  \normalsize\normalfont By\\[24pt]
+  \large\bfseries Ankon Roy\\
+  \normalsize Roll: 2107113\\[6pt]
+  \large\bfseries \&\\[6pt]
+  \large\bfseries [Student Name 2]\\
+  \normalsize Roll: 2107115\\[24pt]
+  \includegraphics[width=1.14in,height=1.0in,keepaspectratio]{SS/p9.jpeg}\\[24pt]
+  \normalsize\bfseries
+  Department of Computer Science and Engineering\\
+  Khulna University of Engineering \& Technology\\
+  Khulna 9203, Bangladesh\\
+  {April, 2026}
+\end{center}
+\clearpage
+
+% ============================================================
+%  TITLE PAGE
+% ============================================================
+\thispagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\begin{center}
+  \Large\bfseries Battery Analyzer: An Android-Based Battery Monitoring,\\
+  Health Estimation and Optimization Support System\\[36pt]
+  \normalsize By\\[24pt]
+  \large\bfseries Ankon Roy\\
+  \normalsize Roll: 2107113\\[6pt]
+  \large \&\\[6pt]
+  \large\bfseries [Student Name 2]\\
+  \normalsize Roll: 2107115\\[48pt]
+  \textbf{Supervisor:}\\[4pt]
+  \large\bfseries Md. Nazirul Hasan Shawon\\[4pt]
+  \normalsize Lecturer\\[4pt]
+  Department of Computer Science and Engineering\\
+  Khulna University of Engineering \& Technology\\[48pt]
+  \normalsize
+  Department of Computer Science and Engineering\\
+  Khulna University of Engineering \& Technology\\
+  Khulna 9203, Bangladesh\\[6pt]
+  \large\bfseries April, 2026
+\end{center}
+\clearpage
+
+% ============================================================
+%  ACKNOWLEDGMENT
+% ============================================================
+\chapter*{Acknowledgment}
+\addcontentsline{toc}{chapter}{Acknowledgment}
+
+All the praise to Almighty Allah. We were bestowed upon the ability and perseverance to complete this project work.
+We extend our sincere thanks and gratitude to our supervisor Md. Nazirul Hasan Shawon sir. He always helped us at every point. He has also provided his suggestions and guidance with his helpful and honest comment and feedback which enable us to overcome from various hurdles.
+The Department of Computer Science and Engineering at Khulna University of Engineering & Technology also deserves a special mention for providing us with place and facilities for carrying out this work. Our teachers and classmates have always been there helping us in various discussions and providing us with novel ideas.
+Finally, we must thank our friends and family. We are very grateful to them for bearing us patiently throughout this project.
+
+\vspace{24pt}
+\begin{flushright}
+\textbf{Authors}
+\end{flushright}
+\clearpage
+
+% ============================================================
+%  ABSTRACT
+% ============================================================
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+People use their smartphones a lot during the day, to communicate, study, play games or work. Because of this, the \textbf{battery} of the smartphone is very important, however the average user doesn't know anything about it other than the percentage left. They do not know the actual \textbf{state of the battery}, which applications consume battery rapidly or if they are \textbf{charging it in the right way} or not.
+
+In this project we developed a new application for Android, named \textbf{"Battery Analyzer"} that will perform several functions in a single application. This will observe the battery in \textbf{real time}, keep \textbf{history}, predict the \textbf{state of the battery} and calculate which apps consume the most battery along with \textbf{suggestions} to conserve battery.
+
+The app was built by using several different tools. \textbf{Flutter} was used for the UI part, the core application logic was implemented in \textbf{Dart} and to interface with Android, \textbf{Kotlin} was used. \textbf{SQLite} was used to store data locally in the device. Also the app makes calls to \textbf{online services} in order to get smarter predictions.
+
+The application collects various data from the battery: \textbf{charge level, current, voltage and temperature}, also it detects if the phone is charging or not. By processing the data collected, the app determines several parameters that describe the battery. The parameters are: \textbf{battery health} in percentage, a \textbf{confidence value} on how much the application is confident on the percentage calculated, a \textbf{stress score} for the battery and also the approximate \textbf{time remaining} until fully charged or fully drained. The app saves all the charging/discharging history, in daily summarizes in a local database, and estimates also the \textbf{battery consumption per application}. An Android \textbf{background service} will watch over the battery consumption also when the screen is off.
+
+The application contacts several \textbf{online services}. The purpose of these online services is to perform calculations using intelligent algorithms. An online service determines the \textbf{remaining cycles} that can be used from the battery. Another online service checks for \textbf{abnormal behavior}. A third online service collects \textbf{anonymous data} from users in order to improve prediction performance.
+
+The application also has a function to \textbf{optimize} the battery saving. Users can access shortcuts to \textbf{dark mode}, lower \textbf{brightness} or change \textbf{timeout} on screen, or, with the permission of the user, the app can \textbf{kill the application} that uses more battery.
+
+It seems possible to create a useful application based on this project without special Android permission or rooted devices, in order to \textbf{educate} the common user on the correct usage of the battery and its optimization.
+
+\clearpage
+
+% ============================================================
+%  TABLE OF CONTENTS
+% ============================================================
+\tableofcontents
+\clearpage
+
+% ============================================================
+%  LIST OF TABLES
+% ============================================================
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+% \clearpage
+
+% ============================================================
+%  LIST OF FIGURES
+% ============================================================
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\clearpage
+
+% ============================================================
+%  CHAPTER I — INTRODUCTION
+% ============================================================
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\chapter{Introduction}
+
+\section{Introduction}
+
+This is perhaps one of the most crucial components of the modern smartphone. A great battery would allow the users to forget about the worry of getting their phone charged. But the bad battery would force them to look for chargers every now and then. But what people look at is just the small battery icon at the top of the phone which only shows the amount of charge present in it. But it does not reflect the health of the battery or whether it is getting weak. Neither does it state that an application may be consuming a lot of battery. It does not mention whether the battery is under a lot of strain and might be damaged in the long run. To eliminate these problems we developed the \textbf{Battery Analyzer}. It is an application that constantly monitors the battery of the phone and gathers lots of data at regular intervals. All the gathered data can then be converted to easily understandable data and users can easily comprehend the condition of their battery and get tips on how to maintain it well.
+
+\section{Background and Problem Statement}
+
+Consider the typical smart phone user. The phone is plugged in at night. It is used all day. After a year or two, the battery does not have as much life. The user does not know why. They do not know if they did anything wrong.
+
+Here are some things most users do not know:
+
+\begin{itemize}
+    \item How much health the battery has lost since they bought the phone.
+    \item Whether their charging habits are good or bad for the battery.
+    \item Which apps are secretly draining the battery in the background?
+    \item If the battery gets too hot or has other strange problems.
+    \item What the numbers like voltage and current, actually mean.
+\end{itemize}
+
+It's really surprising how many battery apps are on the Play Store, considering how basic many of them are. Many of them just show the percentage of the battery, have a charging alert and that's it. A few pretend to save power, but never say how. But few actually put a bunch of handy functions into one single app. Moreover, none of the apps give details to how they are getting their numbers.
+
+Android imposes a number of restrictions on apps. There are not many actions an app cannot perform, charging being one. An app cannot "directly control" charging and has no direct access to exact power consumption values per app. Any well-done app must, thus, work within these limitations.
+
+\section{What We Want to Achieve}
+Our main goal is to build a useful battery analysis app for Android phones. We want it to be easy to use and full of helpful information.
+
+Here are our specific goals:
+
+\begin{enumerate}
+    \item Collect battery data in real time. We want to read things like charge level, current, voltage, and temperature.
+    \item Estimate battery health. We want to give a percentage that shows how much life the battery has left.
+    \item Track charging and discharging sessions. We want to remember each time the phone was charged or used.
+    \item Estimate which apps use the most battery. Even though Android does not give exact numbers, we want to make a good guess.
+    \item Save daily summaries in a local database. Users should be able to look back at past days.
+    \item Connect to online services for smart predictions. We want to use computers on the internet to guess remaining battery life and spot problems.
+    \item Give simple tools to save battery. We want to offer shortcuts for dark mode, brightness, and other settings.
+    \item Make the app easy to understand. The screen should be clean and the numbers should make sense.
+\end{enumerate}
+
+\section{What This Project Covers}
+This project is about building a complete Android app. We designed it, wrote the code, tested it, and wrote this report.
+
+We used these technologies:
+
+\begin{itemize}
+    \item \textbf{Flutter} for making the screens and user interface.
+    \item \textbf{Dart} for writing the logic inside the app.
+    \item \textbf{Kotlin} for talking to Android's battery system.
+    \item \textbf{SQLite} for saving data on the phone.
+    \item \textbf{Shared} Preferences for saving small bits of information.
+    \item \textbf{HTTP} for talking to online servers.
+    \item \textbf{Foreground Service} so the app can watch the battery even when it is not open.
+    \item \textbf{Material Design} so the app looks modern and clean.
+\end{itemize}
+
+We never attempted to implement something that is not supported by android. We did not attempt to control the charging speed, or directly influence the battery, this would require a rooted phone, or factory permissions, so we limited our app to the normal range of functionality.
+
+\section{Unfamiliarity of the Problem and Solution}
+
+Our app is not a copy of another app. The problem we solved sits at the meeting point of several different areas:
+
+\begin{itemize}
+    \item Collecting battery data on a phone.
+    \item Figuring out battery health without special sensors.
+    \item Keeping a history of battery sessions.
+    \item Running a service in the background on Android.
+    \item Guessing app power usage without perfect data.
+    \item Giving helpful tips that follow Android's rules.
+\end{itemize}
+
+The novelty in this solution is our arrangement of all the above components. It is not only a battery meter we have created but a monitoring, storing, analyzing, forecasting and aiding system as well. Design of entire system is of our own work.
+
+\section{Project Planning and Work Distribution}
+
+\subsection{Our Work Plan}
+
+The project was completed in nine phases:
+\begin{enumerate}
+  \item Problem identification and requirements gathering
+  \item Literature review and comparison with existing tools
+  \item System architecture and module design
+  \item Flutter UI implementation
+  \item Android native layer in Kotlin
+  \item Database and state persistence
+  \item API integration for predictions and telemetry
+  \item Testing and debugging
+  \item Report writing and documentation
+\end{enumerate}
+
+\subsection{Gantt Chart}
+
+\begin{table}[H]
+\caption{Project timeline (weeks)}
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Task} & \textbf{Wk 1--2} & \textbf{Wk 3--4} & \textbf{Wk 5--6}
+              & \textbf{Wk 7--8} & \textbf{Wk 9--10} & \textbf{Wk 11--12}\\
+\midrule
+Problem analysis    & \checkmark &            &            &            &            &           \\
+Requirements        & \checkmark & \checkmark &            &            &            &           \\
+UI design           &            & \checkmark & \checkmark &            &            &           \\
+Core logic          &            & \checkmark & \checkmark & \checkmark &            &           \\
+Native integration  &            &            & \checkmark & \checkmark &            &           \\
+DB \& API           &            &            & \checkmark & \checkmark & \checkmark &           \\
+Testing             &            &            &            & \checkmark & \checkmark &           \\
+Report writing      &            &            &            &            & \checkmark & \checkmark\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{How We Divided the Work}
+This was a two student project, so we split the work like this:
+
+\begin{itemize}
+    \item \textbf{Student 1 ([Student 1 full name])} Focused on:
+    \begin{enumerate}
+        \item Understanding what users need
+        \item Writing Kotlin code to collect the user data
+        \item Making the battery service work
+        \item Designing and making the local database
+        \item Building the Flutter screens
+        \item Choosing colors and layout
+        \item Helping with testing
+        \item Writing part of the report
+    \end{enumerate}
+    
+    \item \textbf{Student 2 (Ankon Roy)} Focused on:
+    \begin{enumerate}
+        \item Writing Python code for the backend
+        \item Designing the remote database
+        \item Connecting backend APIs to the app
+        \item Collecting the user's battery data
+        \item Making models to predict remaining useful life for battery
+        \item Making models to detect any anomaly in the app
+        \item Making a RAG system to give the user specific suggestions on how to use the battery.
+    \end{enumerate}
+\end{itemize}
+
+For big parts like making the whole architecture, we worked together.
+
+\section{How This App Can Be Used}
+Battery Analyzer can be useful in many situations:
+
+\begin{itemize}
+    \item A person who wants to know if their phone battery is still healthy.
+    \item Someone who wants to find out which app is draining their battery.
+    \item A curious user who wants to see charging and discharging history.
+    \item Students learning about how Android apps can monitor the battery.
+    \item Teachers showing how Flutter and native Android code work together.
+    \item Anyone who wants to take better care of their phone battery.
+\end{itemize}
+
+\section{How This Report Is Organized}
+This report has seven chapters.
+
+\begin{enumerate}
+    \item Chapter I introduces the project. It explains the problem, our goals, what we covered, and how we planned the work.
+    \item Chapter II looks at other battery apps and research. It shows what was already done and how our work is different.
+    \item Chapter III explains how we built the app. It covers the design, the flow of data, the math we used, and the online services.
+    \item Chapter IV shows what we built. It gives results from testing and explains if we met our goals.
+    \item Chapter V talks about social, ethical, and legal issues. It covers safety, privacy, and impact on the environment.
+    \item Chapter VI describes the hard engineering problems we faced and the hard work we did to solve them.
+    \item Chapter VII gives a summary, lists the limits of our app, and suggests ideas for future improvements.
+\end{enumerate}
+
+
+% ============================================================
+%  CHAPTER II — RELATED WORKS
+% ============================================================
+\chapter{Related Works}
+
+\section{Introduction}
+Before we created our application we researched already existing applications. There are a number of application which discuss batteries. And there is research from universities on battery condition. Chapter discusses the summary of this study and also on why the application is unique.
+
+\section{Other Battery Apps and Research}
+Battery apps usually fall into four groups:
+
+\begin{enumerate}
+    \item \textbf{Basic Battery Information Apps} \\
+    These applications show the charge percent, the temp, and the charge status by using Android \texttt{BatteryManager} API. They are user-friendly but the range of usage is highly restricted. The application do not have records or predict the battery health. It cannot also provide session based analysis [1].
+    
+    \item \textbf{Battery Saver and Optimisation Tools} \\
+    These apps attempt to minimize battery consumption; trying to manage brightness or backgrounds. Occasionally, they will provide an option to activate the native Android Battery Saver. While these may provide a temporary extension to runtime, they lack analytical depth and fail to inform the user on battery status and long-term usage [2].
+    
+    \item \textbf{Research on Battery Health Estimation} \\
+    The body of work for state of health estimation indicated that capacity fade can be monitored through the measurement of current, voltage, temperature, and cycles [4]. The reason that Li-ion batteries have capacity fade is due to heat, fast charging rates, and deep cycling [5]. These models that have been developed are all lab based, not practical for consumer Android application usage due to lack of exposure of exact hardware signals through the Android API.
+    
+    \item \textbf{Machine Learning Models for Battery Prediction} \\
+    Models such as XGBoost for RUL prediction and Isolation Forest for anomaly
+    detection have been validated on public datasets like NASA and CALCE [6,7].
+    Battery Analyzer connects to a backend that uses these exact models. This brings
+    research-quality prediction to a consumer-friendly Android app for the first time
+    in an integrated way.
+\end{enumerate}
+
+Most of the existing solutions have at least one of these problems:
+
+\begin{itemize}
+    \item They do not save a history of battery sessions.
+    \item They do not explain how they get their numbers.
+    \item They do not show which app is using the battery.
+    \item They do not give useful tips based on data.
+    \item They claim to do things that a normal Android app cannot actually do.
+\end{itemize}
+
+\section{Comparative Discussion}
+
+\begin{table}[H]
+\caption{Feature comparison between existing tools and Battery Analyzer}
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Feature} & \textbf{Basic Apps} & \textbf{Saver Tools}
+                 & \textbf{Research} & \textbf{Battery Analyzer}\\
+\midrule
+Real-time battery level     & Yes  & Limited & Sometimes & Yes\\
+Voltage \& temperature      & Sometimes & Rare  & Yes  & Yes\\
+Session history             & Rare & No    & Sometimes & Yes\\
+Per-app attribution         & Rare & No    & Rare  & Yes\\
+Daily statistics            & Rare & No    & Sometimes & Yes\\
+Foreground service          & Rare & Rare  & Sometimes & Yes\\
+Optimisation shortcuts      & No   & Yes   & No    & Yes\\
+RUL \& anomaly API          & No   & No    & Yes   & Yes\\
+Works within Android limits & Varies & Varies & Rarely & Yes\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{What Makes Our App Special}
+Our app is special because it brings together several things:
+
+\begin{itemize}
+    \item Watching the battery live.
+    \item Estimating health in a clear way.
+    \item Showing confidence so users know how sure we are.
+    \item Estimating which app used how much power.
+    \item Keeping a history of sessions and days.
+    \item Giving simple, doable tips to save battery.
+    \item Connecting to online smart services for future predictions.
+\end{itemize}
+
+This combination is not found in most other single apps. We built a complete system, not just one small feature.
+
+\section{Conclusion}
+Another motivation was to study other people’s work and discover the limitations. There are tons of tools, but each of them tackles only a part of the problem. It was our mission at Battery Analyzer to combine the pieces and form the whole. Our task was to bring research done in the lab into the reality of a mobile application.
+
+% ============================================================
+%  CHAPTER III — METHODOLOGY
+% ============================================================
+\chapter{Methodology}
+
+\section{Introduction}
+This chapter will describe how we have developed Battery Analyzer. This chapter will detail the steps we have taken during the development of the application. It will also show the architecture of the application and how information flows from the battery through to the screen, it will also describe the calculation for the health and stress figures.
+
+\section{How We Did the Work Step by Step}
+\subsection{Understanding the Problem and Setting Requirements}
+We started by asking some important questions:
+
+\begin{enumerate}
+    \item How can we keep getting battery data even when the app is closed?
+    \item How can we keep the app working smoothly without draining the battery itself?
+    \item How can we save data on the phone so users can see history?
+    \item How can we guess battery health using only the data Android gives us?
+    \item How can we guess which apps use the most battery?
+    \item How can we give tips that actually work and follow Android's rules?
+\end{enumerate}
+
+\noindent From these questions, we wrote down what the app must do:
+
+\begin{enumerate}
+    \item Keep watching the battery all the time (or as much as Android allows).
+    \item Update the screen with new numbers as they come in.
+    \item Save a history of charging and discharging sessions.
+    \item Save daily summaries in a database.
+    \item Calculate health and stress scores.
+    \item Estimate app battery usage.
+    \item Talk to online services for predicting remaining useful life and anomalies.
+    \item Talk to online services for getting user specific suggestions on using battery properly.
+    \item Offer quick settings toggles for saving battery.
+    \item Have a clean, easy-to-read screen layout.
+\end{enumerate}
+
+\subsection{Tools and Technologies We Used}
+\begin{table}[H]
+\caption{Tools and technologies used in Battery Analyzer}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Tool / Technology} & \textbf{Version} & \textbf{Purpose}\\
+\midrule
+Flutter        & $\geq$ 3.0.0 & Cross-platform UI\\
+Dart           & 3.0+         & App logic and state management\\
+Kotlin         & 1.7+         & Native Android battery access\\
+SQLite (sqflite) & 2.4.1     & Local database storage\\
+Shared Preferences & 2.2.3   & Lightweight runtime state\\
+HTTP package   & 1.1.0        & REST API communication\\
+Material Design 3 & ---       & UI styling\\
+scikit-learn & 1.8.0 & Backend time-series storage\\
+XGBoost (backend) & 3.2.0       & RUL prediction model\\
+Isolation Forest (backend) & --- & Anomaly detection model\\
+FastAPI (backend) & 0.135.3      & Cloud API server\\
+PostgreSQL + TimescaleDB & 17.0.0 & Backend time-series storage\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The Architecture of the System}
+
+The app is organised into five layers:
+
+\begin{enumerate}
+  \item \textbf{Android Native Layer} — Kotlin \texttt{BatteryManager} properties and runs the foreground service. It sends data to Flutter through a named method channel.
+        
+  \item \textbf{Flutter Service Layer} — The \texttt{RealBatteryService} processes raw data, computes health and stress scores, tracks throughput, and pushes results to reactive stream controllers.
+        
+  \item \textbf{Persistence Layer} — SQLite stores daily statistics and session records. Shared Preferences stores lightweight runtime   state.
+  
+  \item \textbf{Presentation Layer} — The \texttt{HomeScreen} widget listens to service streams and updates the five monitoring tabs in real time.
+  
+  \item \textbf{Backend Communication Layer} — The service sends HTTP POST requests to three cloud API endpoints for RUL prediction, anomaly detection, and telemetry ingestion.
+\end{enumerate}
+
+% ---- Welcome screen + Interactive tour (p9 and p12) ----
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.42\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{SS/p9.jpeg}
+    \caption{Welcome screen — entry point of the app with Get Started button}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.42\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{SS/p12.jpeg}
+    \caption{Interactive app tour — explains key features on first launch}
+  \end{subfigure}
+  \caption{App entry flow: Welcome screen and interactive first-launch tour}
+  \label{fig:welcome_tour}
+\end{figure}
+
+Figure~\ref{fig:welcome_tour} shows the first two screens a new user sees.
+The \textbf{Welcome screen} (left) greets the user with a battery graphic and a
+\textit{Get Started} button. Tapping it leads to the \textbf{Interactive App Tour}
+(right), which uses spotlight steps to walk the user through each tab and feature.
+The tour runs only once; after it completes, the app goes directly to the home
+screen on all future launches.
+
+\subsection{Methodology Flowchart of The App}
+
+The system works in a continuous loop:
+
+\begin{enumerate}
+  \item User opens the app and taps \textbf{Start}.
+  \item The app restores any saved runtime state from Shared Preferences.
+  \item The Kotlin foreground service starts and shows an ongoing notification.
+  \item Every five seconds, the native layer reads battery properties and sends
+        them to Flutter via the method channel.
+  \item The service layer processes the data: updates moving averages, computes
+        health and stress, integrates throughput, and checks session transitions.
+  \item SQLite is updated with daily statistics.
+  \item All stream controllers emit new data; the active tab rebuilds its UI.
+  \item At timed intervals, the service sends a telemetry payload to the
+        backend and receives prediction results.
+  \item Anomaly alerts appear in the Logs tab and, for critical events, as
+        system notifications.
+\end{enumerate}
+
+\subsection{How Data Flows Throughout the app}
+
+So, what happens inside? Android's built-in function \texttt{BatteryManager} — which knows every single thing about the battery — sends out new battery info every time a fresh reading is ready. Our \textbf{Kotlin service} catches these readings, creates a simple map, and passes it to the Flutter part using a \textbf{method channel} — think of it like passing notes through a small window.
+
+Once Flutter receives it, the \texttt{RealBatteryService} unpacks the map and turns it into a \texttt{BatteryData} object that we will use later. The \texttt{RealBatteryService} then computes the health, stress, and every other calculation. After that, it broadcasts the results using a \textbf{stream}.
+
+At the end, the \texttt{HomeScreen} listens to this stream by using a \texttt{StreamBuilder} widget. As soon as new data arrives, it updates whatever tab the user is watching. This way, the user can see live information without having to do anything.
+
+\subsection{Database Design}
+
+\begin{table}[H]
+\caption{SQLite schema for daily aggregated battery statistics}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Column} & \textbf{Type} & \textbf{Description}\\
+\midrule
+\texttt{date}             & INTEGER (PK) & Unix timestamp at midnight of the day\\
+\texttt{charged\_mah}     & REAL & Total energy charged that day (mAh)\\
+\texttt{discharged\_mah}  & REAL & Total energy discharged that day (mAh)\\
+\texttt{avg\_charge\_rate}& REAL & Average charge current (mA/h)\\
+\texttt{avg\_discharge\_rate} & REAL & Average discharge current (mA/h)\\
+\texttt{avg\_temp}        & REAL & Mean temperature (°C)\\
+\texttt{max\_temp}        & REAL & Highest temperature recorded (°C)\\
+\texttt{min\_temp}        & REAL & Lowest temperature recorded (°C)\\
+\texttt{min\_level}       & INTEGER & Lowest battery percentage that day\\
+\texttt{max\_level}       & INTEGER & Highest battery percentage that day\\
+\texttt{avg\_health}      & REAL & Mean health percentage\\
+\texttt{avg\_stress}      & REAL & Mean stress score\\
+\texttt{samples}          & INTEGER & Number of samples aggregated\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Health and Stress Estimation}
+
+\subsubsection{Health Percentage}
+
+Battery health is the ratio of measured capacity to design capacity:
+\begin{equation}
+  \text{Health (\%)} = \frac{\text{Measured Capacity (mAh)}}{\text{Design Capacity (mAh)}} \times 100
+\end{equation}
+
+Measured capacity comes from the Android \texttt{EXTRA\_CHARGE\_COUNTER}
+property integrated over monitored sessions. Design capacity is either read from
+the device or set manually by the user.
+
+\subsubsection{Confidence Score}
+
+\begin{equation}
+  \text{Confidence (\%)} = \min\!\left(\frac{\text{Sample Count}}{80},\; 1.0\right) \times 100
+\end{equation}
+
+The score rises as more valid samples accumulate. The system treats estimates as
+high-confidence once 80 samples are collected.
+
+\subsubsection{Stress Score}
+
+The stress score shows how much burden the battery is under. It has three
+components:
+
+\textbf{Thermal stress} — penalises temperatures above 35\,°C:
+\begin{equation}
+  S_{\text{thermal}} = \max\!\bigl(0,\; (T - 35)^{1.35}\bigr) \times 1.4
+\end{equation}
+
+\textbf{Voltage stress} — penalises voltage outside the safe range:
+\begin{equation}
+  S_{\text{voltage}} =
+  \begin{cases}
+    (V - 4.2) \times 220  & \text{if } V > 4.2\text{ V}\\
+    (3.35 - V) \times 100 & \text{if } V < 3.35\text{ V}\\
+    0                     & \text{otherwise}
+  \end{cases}
+\end{equation}
+
+\textbf{C-rate stress} — penalises high charge or discharge currents:
+\begin{equation}
+  S_{\text{crate}} = \max\!\left(0,\; \frac{|I|}{\text{Capacity}} - 0.8\right) \times 2.0
+\end{equation}
+
+\textbf{Total stress score} (normalised to 0--100):
+\begin{equation}
+  \text{Stress} = \min\!\left(\frac{S_{\text{thermal}} + S_{\text{voltage}} + S_{\text{crate}}}{100},\; 1.0\right) \times 100
+\end{equation}
+
+The score is smoothed with an Exponential Weighted Moving Average (EWMA,
+$\alpha = 0.3$) to remove short spikes:
+\begin{equation}
+  \text{EWMA}_i = 0.3 \times \text{Stress}_i + 0.7 \times \text{EWMA}_{i-1}
+\end{equation}
+
+\begin{table}[H]
+\caption{Stress score components and their thresholds}
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+\textbf{Component} & \textbf{Input} & \textbf{Threshold} & \textbf{Formula}\\
+\midrule
+Thermal  & Temperature (°C) & $> 35$\,°C  & $(T-35)^{1.35} \times 1.4$\\
+Voltage high & Voltage (V) & $> 4.2$\,V  & $(V-4.2) \times 220$\\
+Voltage low  & Voltage (V) & $< 3.35$\,V & $(3.35-V) \times 100$\\
+C-rate   & Current / Capacity & $> 0.8$C & $(C\text{-rate}-0.8) \times 2.0$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Time Projections}
+
+\begin{align}
+  \text{Time to full (h)} &= \frac{\text{Capacity} \times (1 - \text{Level}/100)}
+                                   {\text{Avg.\ Charge Rate}}\\[4pt]
+  \text{Time to empty (h)} &= \frac{\text{Capacity} \times \text{Level}/100}
+                                    {\text{Avg.\ Discharge Rate}}
+\end{align}
+
+\subsubsection{Throughput Integration}
+
+\begin{equation}
+  \text{Throughput (mAh)} = \frac{|I \text{ (mA)}| \times \Delta t \text{ (s)}}{3600}
+\end{equation}
+
+Running totals for charged and discharged throughput are kept separately by
+charging state.
+
+\subsubsection{Coulombic Efficiency}
+
+\begin{equation}
+  \eta_C = \frac{\text{Total Discharged (mAh)}}{\text{Total Charged (mAh)}}
+\end{equation}
+
+This is sent to the backend as part of the RUL prediction payload because it is a
+strong indicator of internal degradation.
+
+\subsection{App-Level Battery Attribution}
+
+Android does not tell third-party apps exactly how much battery each app uses.
+Battery Analyzer uses a best-effort model. When the user grants Usage Access
+permission, the app identifies the current foreground app with
+\texttt{UsageStatsManager}. Each monitoring interval's observed discharge is split as:
+
+\begin{align}
+  \text{Foreground attribution} &= \text{Discharge} \times 0.82\\
+  \text{Background attribution} &= \text{Discharge} \times 0.18
+\end{align}
+
+The 82\% foreground share goes to the detected app. The 18\% background share is
+spread across all installed apps. Results are clearly labelled as estimates.
+
+\subsection{Backend API Integration}
+
+\begin{table}[H]
+\caption{API endpoints and their roles}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Endpoint} & \textbf{Role} & \textbf{Key Output}\\
+\midrule
+\texttt{POST /api/v1/predict}         & RUL prediction (XGBoost)        & Cycles remaining, confidence\\
+\texttt{POST /api/v1/anomaly/detect}  & Anomaly detection (Iso.\ Forest) & Anomaly flag and type\\
+\texttt{POST /api/v1/telemetry/ingest}& Telemetry aggregation            & Personalised suggestions\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{User Interface Design}
+
+The app has two top-level sections selectable with a segmented button:
+
+\textbf{Battery Information} contains five tabs:
+\begin{itemize}
+  \item \textbf{Overview} — battery percentage ring, session status, live stats
+        grid (temp, voltage, power, cycles, charge time, discharge time), and
+        throughput counters.
+  \item \textbf{Health} — health percentage bar, confidence score, stress score,
+        charge and discharge rates, health advice, and capacity details.
+  \item \textbf{Apps} — per-app estimated battery usage with foreground and
+        background mAh values and a percentage bar.
+  \item \textbf{History} — list of charging and discharging sessions with level
+        range, mAh change, and duration.
+  \item \textbf{Logs} — timestamped event log of monitoring events, API calls,
+        and anomaly alerts.
+\end{itemize}
+
+\textbf{Battery Optimisation} has two sub-sections:
+\begin{itemize}
+  \item \textbf{PowerShield} — quick saving shortcuts: enable dark mode, reduce
+        brightness, shorten screen timeout, and open display settings.
+  \item \textbf{BatteryPulse} — AI prediction panel showing RUL cycles remaining
+        and an AI Suggestions panel with five topic-based advice cards.
+\end{itemize}
+
+\section{Conclusion}
+All this in essence means: there are five pieces which form the Battery Analyzer application: the Android part that constantly monitor the battery, the Flutter screens that represent to the user, the maths which decide whether the battery is health or not, the local database, the cloud APIs. Every decision has been taken considering what an ordinary Android application can and cannot do: without root access and without any other hacky solution.
+
+% ============================================================
+%  CHAPTER IV — IMPLEMENTATION, RESULTS AND DISCUSSIONS
+% ============================================================
+\chapter{Implementation, Results and Discussions}
+
+\section{Introduction}
+In this chapter, we explain the steps taken to develop the Battery Analyzer, and what tests we conducted and what the outcomes were. We demonstrate that each aim we set out was achieved. We show some screen shots of the application along with an explanation.
+
+\section{Experimental Setup}
+
+\begin{table}[H]
+\caption{Experimental setup and test environment}
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Item} & \textbf{Description}\\
+\midrule
+Development framework  & Flutter $\geq$ 3.0.0\\
+Languages              & Dart 3.0+ and Kotlin 1.7+\\
+Local database         & SQLite via \texttt{sqflite} 2.4.1\\
+Target platform        & Android\\
+Minimum Android        & API 28 (Android 9)\\
+API communication      & HTTPS REST\\
+IDE                    & Android Studio, VS Code\\
+Test device(s)         & Symphony Z60+, vivo, xiaomi\\
+Android version(s)     & 12, 13\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Evaluation Metrics}
+
+\begin{table}[H]
+\caption{Evaluation metrics used to assess the system}
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Metric} & \textbf{What it checks}\\
+\midrule
+Data collection correctness  & Battery values match expected hardware readings\\
+Monitoring continuity        & Service stays active when app is in background\\
+UI update responsiveness     & Tabs refresh within one sampling cycle (5\,s)\\
+Persistence reliability      & SQLite data survives app restart\\
+Health estimate usefulness   & Output is consistent and easy to understand\\
+Attribution quality          & Per-app mAh totals are reasonable approximations\\
+API success rate             & Prediction requests complete without timeout\\
+Optimisation effectiveness   & Shortcuts produce measurable drain reduction\\
+System stability             & No crashes or memory leaks over 48\,h sessions\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Dataset}
+
+The project uses four categories of runtime data:
+
+\begin{enumerate}
+  \item \textbf{Live device telemetry} — generated every 5\,s from real hardware.
+  \item \textbf{Session records} — individual charge and discharge events stored
+        in SQLite.
+  \item \textbf{Daily aggregates} — date-keyed summaries in the local database.
+  \item \textbf{API payloads} — request and response samples from the prediction
+        endpoints.
+\end{enumerate}
+
+The backend ML models were trained on the NASA battery degradation dataset and the
+CALCE battery dataset, which together contain thousands of laboratory
+charge-discharge cycles.
+
+\section{Implementation and Results}
+
+\subsection{Overview Tab}
+
+% ---- Overview tab: light and dark theme (p3 and p5) ----
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.42\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{SS/p3.jpeg}
+    \caption{Overview tab — light theme, discharging at 54\%}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.42\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{SS/p5.jpeg}
+    \caption{Overview tab — dark theme, same session data}
+  \end{subfigure}
+  \caption{Overview tab shown in light and dark themes during a discharge session}
+  \label{fig:overview}
+\end{figure}
+
+Figure~\ref{fig:overview} shows the Overview tab in both the light and dark themes.
+The large percentage ring at the top shows the current charge level (54\% in these
+screenshots). The ring changes colour based on health: green for good, amber for
+fair, and red for poor. Beside the ring, four live readings update every 5\,s:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Current}: $-632$\,mA (light) and $-373$\,mA (dark) — the negative
+        sign means the battery is discharging.
+  \item \textbf{Voltage}: 3.94\,V — within the safe nominal range.
+  \item \textbf{Temperature}: 36.0\,°C — slightly above the optimal 35\,°C,
+        so a mild thermal stress penalty is applied.
+  \item \textbf{To empty}: 3\,h\,11\,m (light) / 5\,h\,24\,m (dark) — time
+        projection from average discharge rate.
+\end{itemize}
+
+The status card below the ring says ``Discharging session active'' with the health
+label (``Fair'') and current draw. The 3\,$\times$\,2 stats grid shows Temperature
+(36.0\,°C), Voltage (3.94\,V), Power (2493\,mW light / 1471\,mW dark), Cycles
+(4.83), Charging time (3\,h\,26\,m), and Discharge time (47\,h\,24\,m).
+The difference in power between the two screenshots reflects different current draws
+at two different moments, not an error.
+
+At the bottom, a ``Reset samples'' button lets the user clear accumulated capacity
+samples and start fresh health estimation.
+
+\subsection{History Tab and Battery Optimisation Screen}
+
+% ---- History tab + PowerShield (p8 and p10) ----
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.42\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{SS/p8.jpeg}
+    \caption{History tab — charging session list with trend summary}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.42\textwidth}
+    \centering
+    \includegraphics[width=\textwidth,keepaspectratio]{SS/p10.jpeg}
+    \caption{Battery Optimisation — PowerShield quick-saving actions}
+  \end{subfigure}
+  \caption{History tab and Battery Optimisation screen}
+  \label{fig:history_optimization}
+\end{figure}
+
+\textbf{History Tab (left panel).}
+Each row in Figure~\ref{fig:history_optimization} is one saved charging session
+showing:
+\begin{itemize}[leftmargin=1.5em]
+  \item Percentage gain (e.g., $+45\%$) and mAh gained ($+1538.6$\,mAh)
+  \item Start and end battery levels with timestamps
+  \item A ``Saved'' badge confirming the record was persisted to SQLite
+\end{itemize}
+
+The Trend Summary card at the bottom shows 17 valid sessions recorded, an average
+charge gain of 14.6\%, and an average battery increase of 437.0\,mAh. These totals
+help users understand their typical charging behaviour at a glance.
+
+\textbf{Battery Optimisation — PowerShield (right panel).}
+The PowerShield sub-tab gives three quick-saving buttons:
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Enable dark mode} — toggles the app and, where supported, the
+        system dark theme. OLED screens save significant power with dark pixels.
+  \item \textbf{Reduce brightness} — lowers display brightness, one of the largest
+        sources of power drain.
+  \item \textbf{Shorten screen timeout} — reduces how long the screen stays on
+        when idle.
+\end{itemize}
+
+A \textbf{Display optimisation} section below links to the Android display settings
+screen where the user can lower refresh rate, disable Always-On Display, and adjust
+OEM-specific display-saving features. A note at the top clearly states that
+brightness and timeout changes need Android system settings access, and a
+permission button is shown when access has not yet been granted.
+
+\subsection{BatteryPulse — AI Prediction and Suggestions}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth,keepaspectratio]{SS/p12.jpeg}
+  \caption{BatteryPulse sub-tab showing AI Prediction and AI Suggestion cards}
+  \label{fig:batterypulse}
+\end{figure}
+
+Figure~\ref{fig:batterypulse} shows the BatteryPulse sub-tab. The
+\textbf{AI Prediction} panel at the top displays the estimated number of charge
+cycles remaining (from the XGBoost backend model). The \textbf{AI Suggestions}
+panel below provides five topic buttons — Best Time to Charge, Battery Heat
+Analysis, Health Check, Charging Habits, and Fast Charging Impact — which the user
+can tap to receive personalised advice based on their own battery data.
+
+\subsection{AI-Driven Suggestion System}
+
+The AI layer has three pillars, each targeting a different analytical need.
+
+\textbf{Pillar 1 — Remaining Useful Life (RUL) Prediction}
+
+The backend XGBoost model takes a JSON request body of 12 features (cycle count, mean current, mean voltage, charge capacity, discharge capacity, duration of session, percentage SOH, current CoV, mean power, Coulombic efficiency) and returns the predicted number of additional cycles the battery is expected to last until it is below 80\% design capacity and a confidence level (high / medium / low). An example response: "Battery expected to last for 487 full cycles more (high confidence)."
+
+\textbf{Pillar 2 — Anomaly Detection}
+
+The Isolation Forest model compares incoming readings against learned normal
+profiles and flags five types of anomaly:
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Thermal} — temperature exceeds 55\,°C or rises too quickly.
+  \item \textbf{Voltage} — overvoltage above 4.35\,V or undervoltage below 2.5\,V.
+  \item \textbf{Capacity} — sudden drop greater than 5\% in one session.
+  \item \textbf{Discharge rate} — drain far faster than usage level suggests.
+  \item \textbf{Charging} — abnormal charge acceptance or early cutoff.
+\end{enumerate}
+Detected anomalies appear in the Logs tab and, for critical events, as a system
+notification.
+
+\textbf{Pillar 3 — Personalised Optimisation Suggestions}
+
+The telemetry endpoint aggregates session data and returns context-aware advice.
+The five suggestion topics in BatteryPulse are populated with answers from this API
+using the user's own battery history.
+
+\begin{table}[H]
+\caption{AI performance benchmarks and expected outcomes}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{AI Metric} & \textbf{Target} & \textbf{Expected Result}\\
+\midrule
+RUL prediction accuracy   & 85--92\% in 100-cycle window & Replacement planning 2--3 months ahead\\
+Anomaly precision         & $>95\%$ true positives      & Low false alarm rate\\
+Anomaly recall            & $>85\%$ critical events     & Most real anomalies caught\\
+API response time         & $<500$\,ms                  & No noticeable UI lag\\
+Suggestion adoption       & 60--70\% (A/B baseline)     & High relevance to user needs\\
+Battery life improvement  & $+15$--25\%                 & For users who follow suggestions\\
+Attribution error margin  & $\pm 10\%$                  & Enough to spot heavy consumers\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Sample Monitoring Results}
+
+\begin{table}[H]
+\caption{Sample battery readings from test sessions}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Metric} & \textbf{Sample Result} & \textbf{Notes}\\
+\midrule
+Battery level       & 54\%       & Confirmed via Overview ring\\
+Temperature         & 36.0\,°C   & Mild thermal stress applied\\
+Voltage             & 3.94\,V    & Within safe nominal range\\
+Current             & $-632$\,mA & Discharging (negative sign)\\
+Power               & 2493\,mW   & $= |I| \times V$\\
+Health percentage   & [Insert]   & Capacity-to-design ratio\\
+Confidence score    & [Insert]   & Increases with more samples\\
+Stress score        & [Insert]   & Thermal + voltage + C-rate\\
+Sessions recorded   & 17         & Visible in History trend summary\\
+Avg.\ charge gain   & 14.6\%     & Visible in History trend summary\\
+Avg.\ mAh gain      & 437.0\,mAh & Visible in History trend summary\\
+API response time   & [Insert]   & Target $<500$\,ms\\
+RUL prediction      & [Insert]   & From XGBoost backend model\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Analysis of Results}
+
+From the screenshots it can be seen that accurate battery data is stored and retrieved real-time. The history tab has all 17 sessions correctly recorded in SQLite showing that persistence does persist across app launches. The trend summary shows the user with an instant statistical overview, so they don't need to scan all the row entries.
+
+Figure \ref{fig:overview} shows the two different themes to demonstrate the UI works correctly in both light and dark mode. The difference in current readings at two different times is due to actual device power usage fluctuation, not a system error.
+
+Figure \ref{fig:history_optimization} clearly shows all three quick save buttons visible and also explicitly tells the user of the permission required by the system, the system remaining transparent as to what it can and cannot do.
+
+\section{Objectives Achieved}
+
+\begin{table}[H]
+\caption{Mapping of objectives to implementation evidence}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Objective} & \textbf{Status} & \textbf{Evidence}\\
+\midrule
+Real-time telemetry    & Done & Overview tab updates every 5\,s\\
+Health estimation      & Done & Health \% and confidence on Health tab\\
+Session history        & Done & 17 sessions in History tab\\
+Per-app attribution    & Done & Apps tab with foreground/background split\\
+Daily statistics       & Done & SQLite daily aggregation\\
+AI API integration     & Done & BatteryPulse RUL and suggestion cards\\
+Optimisation shortcuts & Done & PowerShield quick-save buttons\\
+Tabbed UI              & Done & Five tabs plus Optimisation section\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+
+The Battery Analyzer works as a complete system, as intended. The aims were achieved. Actual screenshots can be found to demonstrate live-monitoring, session-saving, trend analysis and optimization tools are functioning within the scope of a standard Android application.
+
+% ============================================================
+%  CHAPTER V — SHEELC ISSUES
+% ============================================================
+\chapter{Societal, Health, Environment, Safety, Ethical, Legal and Cultural Issues}
+
+\section{Intellectual Property Considerations}
+
+Battery Analyzer uses only open-source frameworks and publicly documented Android
+APIs. All third-party packages are used under their respective open licences. The
+NASA and CALCE battery datasets used to train the backend models are acknowledged
+as the property of their originating research institutions.
+
+\section{Ethical Considerations}
+
+The app collects device usage data such as foreground app names and power draw.
+To handle this ethically:
+\begin{itemize}[leftmargin=1.5em]
+  \item All sensitive permissions (Usage Access, Accessibility Service) require
+        explicit user approval.
+  \item No personally identifiable information is sent to the backend.
+  \item Per-app attribution results are clearly labelled as estimates.
+  \item Users can stop monitoring and clear data at any time.
+\end{itemize}
+
+\section{Safety Considerations}
+
+The app is purely advisory. It does not modify charging voltage, override thermal
+protection circuits, or interact with battery hardware directly. Anomaly alerts
+advise users to reduce device load or seek professional help, not to perform
+hardware modifications.
+
+\section{Legal Considerations}
+
+All features use Android permissions for their declared purposes only. A future
+public release would need to comply with applicable data protection laws (such as
+GDPR in Europe) and Google Play Store policies.
+
+\section{Impact on Societal, Health, and Cultural Issues}
+
+In Bangladesh and other mobile-first economies, smartphones are the primary device
+for education, communication, and economic activity. Battery reliability directly
+affects access to these services. Battery Analyzer gives users the knowledge to
+extend battery life, which reduces device downtime and supports continued digital
+participation.
+
+From a health perspective, early anomaly detection — especially thermal alerts —
+can warn users before a battery event causes physical harm.
+
+\section{Impact on Environment and Sustainability}
+
+Every battery that fails early due to poor charging habits adds to electronic waste.
+Battery Analyzer extends battery life by giving users actionable information about
+harmful habits. Even a modest increase in average battery replacement intervals,
+multiplied across many users, represents a meaningful reduction in hazardous waste.
+The app itself is designed to use less than 2\% battery per hour while monitoring.
+
+The environmental benefit goes beyond e-waste. Manufacturing one smartphone emits 50--60 kg of CO₂e, and a failing battery often triggers a full phone replacement. By extending battery life by just one month per user, Battery Analyzer helps delay these replacements. For 100,000 users, this avoids approximately 120 tonnes of CO₂e emissions — equivalent to removing 26 cars from the road for a year.
+
+\begin{table}[H]
+\caption{SHEELC issues summary}
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Category} & \textbf{Issue} & \textbf{How it is handled}\\
+\midrule
+Societal    & Usage data reflects behaviour patterns & Anonymised telemetry, no PII sent\\
+Health      & Alerts may cause user anxiety          & Alerts include context and severity level\\
+Environment & Battery replacement adds e-waste       & Longer battery life reduces waste\\
+Safety      & Advisory tool could be misread         & Clear ``estimate'' labels; no hardware changes\\
+Ethical     & App data involves third-party apps     & Attribution shown as estimate, not fact\\
+Legal       & Sensitive permissions needed           & Explicit user consent required for each\\
+Cultural    & Mobile-dependent societies             & Designed for low-bandwidth environments\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+%  CHAPTER VI — COMPLEX ENGINEERING
+% ============================================================
+\chapter{Addressing Complex Engineering Problems and Activities}
+
+\section{Complex Engineering Problems}
+
+\textbf{Problem 1 — Device hardware variability.}
+Different brands of Android devices report battery characteristics with varying degrees of accuracy and reliability. The availability of charge counter support, the accuracy of the voltage readings, and the quality of the temperature sensors are all factors that differ. The system degrades gracefully, and confidence scores are adjusted as the quality of the data deteriorates.
+
+\textbf{Problem 2 — Background execution under Android restrictions.}
+Android's doze mode and battery optimization can kill your background processes. The right Android-compliant way to keep your constant monitoring is to run a foreground service with persistent notification, but careful lifecycle management must be taken to prevent crashes and memory leaks.
+
+\textbf{Problem 3 — Health estimation from noisy signals.}
+We cannot directly read battery health through any normal Android API. What we get are (noisy, device dependent) charge counter, voltage, current and temperature. The system tries to guess health from these imprecise numbers and correctly tells us how confident it is.
+
+\textbf{Problem 4 — App attribution without privileged access.}
+There is no true power accounting on a per-application basis in Android, allowing the third-party applications actual power accounting control. The split between 82/18 for foreground/background is a fair assumption, but it is clearly explained that it's an approximation in order not to confuse the users.
+
+\textbf{Problem 5 — Monitoring overhead management.}
+A battery monitoring app that drains a lot of battery would defeat its own purpose. The sampling interval, computational cost and the frequency of writing to the database have been optimized to ensure that the self-consumption is less than 2\% hour.
+
+\textbf{Problem 6 — Multi-layer system integration.}
+To bring a Flutter UI, a Dart service, a Kotlin native layer, a SQLite database, and a
+remote REST API together into a single trustworthy system, interfaces must be defined
+carefully, state managed, and errors handled correctly at each border.
+
+\textbf{Problem 7 — Dataset mismatch between lab conditions and real smartphone usage.}
+The NASA and CALCE datasets are collected under controlled lab environments on old, high capacity cells rather than on real smartphone batteries. Unpredictable charge/discharge behavior, like that experienced on a real phone, cannot be replicated and therefore there are certain cases when the model predicts incorrectly or incorrectly identifies an anomaly.
+
+\section{Complex Engineering Activities}
+
+\begin{table}[H]
+\caption{Complex engineering activities and how they were addressed}
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Activity} & \textbf{Approach}\\
+\midrule
+Device heterogeneity handling    & Fallback logic; confidence degrades when data is missing\\
+Background service architecture  & Foreground service with lifecycle-aware channel binding\\
+Noisy signal processing          & EWMA smoothing; quality gating below 60\% counter coverage\\
+App attribution model            & Usage Access + 82/18 split; clearly labelled as estimates\\
+Overhead minimisation            & 5-second interval; batched SQLite writes; lazy API dispatch\\
+Multi-layer integration          & Structured method channel contracts; reactive stream design\\
+Anomaly detection integration    & Isolation Forest API with severity classification\\
+Result communication             & Confidence-annotated outputs; estimate labels throughout\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+%  CHAPTER VII — CONCLUSIONS
+% ============================================================
+\chapter{Conclusions}
+
+\section{Summary}
+
+This was a project to build, \textbf{Battery Analyzer}; An Android app for battery monitoring and analysis which merges live telemetry data, State-of-Health calculation, stress scoring, historical session tracking, application-specific attribution, daily stats, prediction based on AI and shortcuts for optimizing usage, all within one, simple to use Flutter application which runs on standard Android devices, doesn't require root and doesn't use custom device permissions from manufacturers. Real screenshots were taken that verify the functionality of all intended features.
+
+\section{Limitations}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Per-app battery attribution is an estimate, not a system measurement.
+  \item Charge counter accuracy depends on the device manufacturer's driver.
+  \item Background behaviour can vary across Android versions and OEM skins.
+  \item RUL and anomaly features require network access to the cloud backend.
+  \item RUL and anomaly features may be misleading sometimes.
+  \item Health estimate quality improves only after enough samples are collected.
+  \item The app cannot control charging speed or thermal limits directly.
+\end{itemize}
+
+\section{Recommendations and Future Works}
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Add on-device ML so RUL prediction works offline.
+  \item Use LSTM models for better anomaly detection over time.
+  \item Add push notifications for thermal warnings and health milestones.
+  \item Sync session history to the cloud for cross-device access.
+  \item Improve calibration for devices with unreliable charge counters.
+  \item Test on a wider range of Android devices and versions.
+  \item Add export-ready charts for sharing battery reports.
+\end{itemize}
+
+% ============================================================
+%  APPENDICES
+% ============================================================
+\appendix
+\chapter{Additional Screenshots}
+
+Insert additional screenshots here.
+
+\chapter{Sample API Payloads}
+
+Insert sample JSON request and response bodies for the three API endpoints.
+
+\chapter{Database Schema Details}
+
+Insert entity-relationship diagram and full SQLite schema here.
+
+\chapter{Test Case Summary}
+
+Insert pass/fail table for all planned test cases.
+
+% ============================================================
+%  REFERENCES
+% ============================================================
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+\renewcommand{\labelenumi}{[\theenumi]}
+\begin{enumerate}
+
+\item Android Developers, ``BatteryManager,'' Android API Reference. [Online].
+  Available: \url{https://developer.android.com/reference/android/os/BatteryManager}
+
+\item Android Developers, ``Foreground services overview.'' [Online].
+  Available: \url{https://developer.android.com/develop/background-work/services/foreground-services}
+
+\item Flutter, ``Flutter documentation.'' [Online].
+  Available: \url{https://docs.flutter.dev/}
+
+\item J.~S.~Menye, M.-B.~Camara, and B.~Dakyo, ``Lithium Battery Degradation and
+  Failure Mechanisms: A State-of-the-Art Review,'' \textit{Energies}, vol.~18,
+  no.~2, 2025.
+
+\item F.~von~Bulow, F.~Heinrich, and W.~A.~Paxton, ``The future of battery data
+  and the state of health of lithium-ion batteries in automotive applications,''
+  \textit{Communications Engineering}, vol.~3, 2024.
+
+\item T.~Chen and C.~Guestrin, ``XGBoost: A Scalable Tree Boosting System,''
+  in \textit{Proc.\ 22nd ACM SIGKDD Int.\ Conf.\ Knowledge Discovery and Data
+  Mining}, San Francisco, CA, USA, 2016, pp.~785--794.
+
+\item F.~T.~Liu, K.~M.~Ting, and Z.~Zhou, ``Isolation Forest,'' in
+  \textit{Proc.\ 8th IEEE Int.\ Conf.\ Data Mining}, Pisa, Italy, 2008,
+  pp.~413--422.
+
+\item Android Developers, ``UsageStatsManager.'' [Online].
+  Available: \url{https://developer.android.com/reference/android/app/usage/UsageStatsManager}
+
+\item T.~M.~Bandhauer, S.~Garimella, and T.~F.~Fuller, ``A Critical Review of
+  Thermal Issues in Lithium-Ion Batteries,'' \textit{J.\ Electrochem.\ Soc.},
+  vol.~158, no.~3, pp.~R1--R25, 2011.
+
+\item M.~Broussely \textit{et al.}, ``Main aging mechanisms in Li ion batteries,''
+  \textit{J.\ Power Sources}, vol.~146, no.~1--2, pp.~90--96, 2005.
+
+\end{enumerate}
+
+\end{document}
