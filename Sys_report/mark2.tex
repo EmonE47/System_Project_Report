@@ -25,6 +25,7 @@
 \usepackage{parskip}
 \usepackage{microtype}
 \usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{float}
@@ -42,7 +43,11 @@
   linkcolor=black,
   urlcolor=black,
   citecolor=black,
-  bookmarksnumbered=true
+  filecolor=black,
+  bookmarksnumbered=true,
+  pdfborder={0 0 0},
+  pdftitle={Battery Analyzer: System Development Project Report},
+  pdfauthor={Ankon Roy and MD Ahsanul Islam}
 }
 
 % ---------- line spacing ----------
@@ -96,56 +101,56 @@
 % ============================================================
 %  COVER PAGE
 % ============================================================
-% \thispagestyle{empty}
-% \begin{center}
-%   \includegraphics[width=0.3\textwidth]{images/logo.png}
-%   \vspace{0.3in}
-%   \large\bfseries \\ CSE 3200: System Development Project\\[12pt]
-%   \Large\bfseries\MakeUppercase{Battery Analyzer: An Android-Based Battery}\\
-%   \Large\bfseries\MakeUppercase{Monitoring, Health Estimation and}\\
-%   \Large\bfseries\MakeUppercase{Optimization Support System}\\[24pt]
-%   \normalsize\normalfont By\\[24pt]
-%   \large\bfseries Ankon Roy\\
-%   \normalsize Roll: 2107113\\[6pt]
-%   \large\bfseries \&\\[6pt]
-%   \large\bfseries MD Ahsanul Islam\\
-%   \normalsize Roll: 2107115\\[24pt]
-%   \includegraphics[width=1.14in,height=1.0in,keepaspectratio]{SS/p9.jpeg}\\[24pt]
-%   \normalsize\bfseries
-%   Department of Computer Science and Engineering\\
-%   Khulna University of Engineering \& Technology\\
-%   Khulna 9203, Bangladesh\\
-%   {April, 2026}
-% \end{center}
-% \clearpage
+\thispagestyle{empty}
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{images/logo.png}
+  \vspace{0.3in}
+  \large\bfseries \\ CSE 3200: System Development Project\\[12pt]
+  \Large\bfseries\MakeUppercase{Battery Analyzer: An Android-Based Battery}\\
+  \Large\bfseries\MakeUppercase{Monitoring, Health Estimation and}\\
+  \Large\bfseries\MakeUppercase{Optimization Support System}\\[24pt]
+  \normalsize\normalfont By\\[24pt]
+  \large\bfseries Ankon Roy\\
+  \normalsize Roll: 2107113\\[6pt]
+  \large\bfseries \&\\[6pt]
+  \large\bfseries MD Ahsanul Islam\\
+  \normalsize Roll: 2107115\\[24pt]
+  \includegraphics[width=1.14in,height=1.0in,keepaspectratio]{SS/p9.jpeg}\\[24pt]
+  \normalsize\bfseries
+  Department of Computer Science and Engineering\\
+  Khulna University of Engineering \& Technology\\
+  Khulna 9203, Bangladesh\\
+  {April, 2026}
+\end{center}
+\clearpage
 
 % % ============================================================
 % %  TITLE PAGE
 % % ============================================================
-% \thispagestyle{plain}
-% \pagenumbering{roman}
-% \setcounter{page}{1}
-% \begin{center}
-%   \Large\bfseries Battery Analyzer: An Android-Based Battery Monitoring,\\
-%   Health Estimation and Optimization Support System\\[36pt]
-%   \normalsize By\\[24pt]
-%   \large\bfseries Ankon Roy\\
-%   \normalsize Roll: 2107113\\[6pt]
-%   \large \&\\[6pt]
-%   \large\bfseries MD Ahsanul Islam\\
-%   \normalsize Roll: 2107115\\[48pt]
-%   \textbf{Supervisor:}\\[4pt]
-%   \large\bfseries Md. Nazirul Hasan Shawon\\[4pt]
-%   \normalsize Lecturer\\[4pt]
-%   Department of Computer Science and Engineering\\
-%   Khulna University of Engineering \& Technology\\[48pt]
-%   \normalsize
-%   Department of Computer Science and Engineering\\
-%   Khulna University of Engineering \& Technology\\
-%   Khulna 9203, Bangladesh\\[6pt]
-%   \large\bfseries April, 2026
-% \end{center}
-% \clearpage
+\thispagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\begin{center}
+  \Large\bfseries Battery Analyzer: An Android-Based Battery Monitoring,\\
+  Health Estimation and Optimization Support System\\[36pt]
+  \normalsize By\\[24pt]
+  \large\bfseries Ankon Roy\\
+  \normalsize Roll: 2107113\\[6pt]
+  \large \&\\[6pt]
+  \large\bfseries MD Ahsanul Islam\\
+  \normalsize Roll: 2107115\\[48pt]
+  \textbf{Supervisor:}\\[4pt]
+  \large\bfseries Md. Nazirul Hasan Shawon\\[4pt]
+  \normalsize Lecturer\\[4pt]
+  Department of Computer Science and Engineering\\
+  Khulna University of Engineering \& Technology\\[48pt]
+  \normalsize
+  Department of Computer Science and Engineering\\
+  Khulna University of Engineering \& Technology\\
+  Khulna 9203, Bangladesh\\[6pt]
+  \large\bfseries April, 2026
+\end{center}
+\clearpage
 
 % ============================================================
 %  ACKNOWLEDGMENT
@@ -628,29 +633,32 @@ As there are more valid measurements, the value increases. When 80 valid samples
 
 The index reflects the level of strain imposed on the battery. There are three types of stress involved:
 
-\textbf{Thermal stress} – punishes high temperatures exceeding 35°C:
+\textbf{Thermal stress} – penalizes high temperatures above 25°C \cite{BU808}~:
 \begin{equation}
-  S_{\text{thermal}} = \max\!\bigl(0,\; (T - 35)^{1.35} \times 1.4\bigr)
-\end{equation}
-
-\textbf{Voltage stress} — penalises voltage outside the safe range:
-\begin{equation}
-  S_{\text{voltage}} =
+  S_{\text{thermal}} =
   \begin{cases}
-    (V - 4.2) \times 220  & \text{if } V > 4.2\text{ V}\\
-    (3.35 - V) \times 100 & \text{if } V < 3.35\text{ V}\\
-    0                     & \text{otherwise}
+    \frac{T - 25}{35} & \text{if } T > 25\text{°C}\\
+    0                 & \text{if } T \leq 25\text{°C}
   \end{cases}
 \end{equation}
 
-\textbf{C-rate stress} — penalises high charge or discharge currents:
+\textbf{Voltage stress} — penalizes voltage above optimal range \cite{AccuBattery}~:
 \begin{equation}
-  S_{\text{crate}} = \max\!\left(0,\; \frac{|I|}{\text{Capacity}} - 0.8\right) \times 2.0
+  S_{\text{voltage}} =
+  \begin{cases}
+    \frac{V - 3.92}{0.28} & \text{if } V > 3.92\text{ V}\\
+    0                     & \text{if } V \leq 3.92\text{ V}
+  \end{cases}
+\end{equation}
+
+\textbf{C-rate stress} — penalizes high charge or discharge currents \cite{LargeBattery}~:
+\begin{equation}
+  S_{\text{crate}} = \min\!\left(\frac{C_{\text{rate}}}{C_{\text{max}}},\; 1.0\right) \quad \text{where } C_{\text{max}} = 1.0
 \end{equation}
 
 \textbf{Total stress} (normalized to 0--100):
 \begin{equation}
-  \text{Stress} = \min\!\left(\frac{S_{\text{thermal}} + S_{\text{voltage}} + S_{\text{crate}}}{100},\; 1.0\right) \times 100
+  \text{Stress} = \left(\frac{S_{\text{thermal}} + S_{\text{voltage}} + S_{\text{crate}}}{3}\right) \times 100
 \end{equation}
 
 The score is smoothing with an Exponential Weight Moving Average (EWMA,
@@ -667,10 +675,9 @@ $\alpha = 0.3$) to remove short spikes:
 \toprule
 \textbf{Component} & \textbf{Input} & \textbf{Threshold} & \textbf{Formula}\\
 \midrule
-Thermal  & Temperature (°C) & $> 35$\,°C  & $(T-35)^{1.35} \times 1.4$\\
-Voltage high & Voltage (V) & $> 4.2$\,V  & $(V-4.2) \times 220$\\
-Voltage low  & Voltage (V) & $< 3.35$\,V & $(3.35-V) \times 100$\\
-C-rate   & Current / Capacity & $> 0.8$C & $(C\text{-rate}-0.8) \times 2.0$\\
+Thermal  & Temperature (°C) & $> 25$\,°C  & $(T-25) / 35$\\
+Voltage  & Voltage (V) & $> 3.92$\,V & $(V-3.92) / 0.28$\\
+C-rate   & C-rate & $\leq 1.0$  & $C_{\text{rate}} / C_{\text{max}}$\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -795,7 +802,7 @@ in landscape orientation to accommodate the breadth of the class hierarchy.
 % ------------------------------------------------------------
 \section{Use Case Diagram}
 
-The actors and their interaction with the system are illustrated in Fig.~\ref{fig:use_case.pdf}.
+The actors and their interaction with the system are illustrated in Fig.~\ref{fig:use_case}.
 The main actor is the \textbf{User}, which triggers all monitoring and optimization operations.
 The \textbf{Backend API} actor is involved in all AI-based use case scenarios, while the \textbf{Android Platform} provides the battery data and system settings.
 \begin{figure}[H]
@@ -973,7 +980,7 @@ Launch Flow Controller (P1), Home UI Controller (P2), Battery Monitoring Service
 % ------------------------------------------------------------
 \section{Component Diagram}
 
-Figure~\ref{fig:component_diagram.pdf} shows the major software components and their
+Figure~\ref{fig:component_diagram} shows the major software components and their
 provided/required interfaces. The \textit{Flutter App} boundary contains the
 \textit{Presentation Layer} (UI widgets) and \textit{Service Layer}
 (\texttt{RealBatteryService}). External components include the
@@ -995,7 +1002,7 @@ SharedPreferences), and the \textit{Remote Backend} (FastAPI endpoints).
 % ------------------------------------------------------------
 \section{Deployment Diagram}
 
-Figure~\ref{fig:deployment_diagram.pdf} maps the software components onto physical or
+Figure~\ref{fig:deployment_diagram} maps the software components onto physical or
 virtual execution environments. The \textit{Android Device} node hosts the Flutter
 app and Kotlin service. The \textit{Cloud Server} node runs the FastAPI backend
 with its PostgreSQL+TimescaleDB database. The two nodes communicate over HTTPS.
@@ -1352,7 +1359,7 @@ the lifetime of the battery just for a month for 100,000 users results in saving
 \caption{Summary of SHEELC concerns}
 \centering
 \small
-\begin{tabular}{lll}
+\begin{tabular}{l|p{2.8cm}|p{3.2cm}}
 \toprule
 \textbf{Concern Type} & \textbf{Concern} & \textbf{Management}\\
 \midrule
@@ -1453,22 +1460,6 @@ This was a project to build, \textbf{Battery Analyzer}; An Android app for batte
 % ============================================================
 %  APPENDICES
 % ============================================================
-\appendix
-\chapter{Additional Screenshots}
-
-Insert additional screenshots here.
-
-\chapter{Sample API Payloads}
-
-Insert sample JSON request and response bodies for the three API endpoints.
-
-\chapter{Database Schema Details}
-
-Insert entity-relationship diagram and full SQLite schema here.
-
-\chapter{Test Case Summary}
-
-Insert pass/fail table for all planned test cases.
 
 % ============================================================
 %  REFERENCES
@@ -1514,5 +1505,11 @@ Insert pass/fail table for all planned test cases.
   \textit{J.\ Power Sources}, vol.~146, no.~1--2, pp.~90--96, 2005.
 
 \end{enumerate}
+
+% ============================================================
+%  BIBLIOGRAPHY
+% ============================================================
+\bibliographystyle{plainnat}
+\bibliography{bibliography}
 
 \end{document}

@@ -1,7 +1,7 @@
-\contentsline {chapter}{Acknowledgment}{1}{chapter*.1}%
-\contentsline {chapter}{Abstract}{2}{chapter*.2}%
-\contentsline {chapter}{List of Tables}{6}{chapter*.2}%
-\contentsline {chapter}{List of Figures}{7}{chapter*.2}%
+\contentsline {chapter}{Acknowledgment}{ii}{chapter*.1}%
+\contentsline {chapter}{Abstract}{iii}{chapter*.2}%
+\contentsline {chapter}{List of Tables}{vii}{chapter*.2}%
+\contentsline {chapter}{List of Figures}{viii}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Background and Problem Statement}{1}{section.1.2}%
@@ -80,8 +80,4 @@
 \contentsline {section}{\numberline {8.1}Summary}{43}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Limitations}{43}{section.8.2}%
 \contentsline {section}{\numberline {8.3}Recommendations and Future Work}{43}{section.8.3}%
-\contentsline {chapter}{\numberline {A}Additional Screenshots}{44}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Sample API Payloads}{45}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Database Schema Details}{46}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Test Case Summary}{47}{appendix.D}%
-\contentsline {chapter}{References}{48}{appendix*.30}%
+\contentsline {chapter}{References}{44}{chapter*.30}%
