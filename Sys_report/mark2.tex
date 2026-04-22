@@ -33,7 +33,8 @@
 \usepackage{amssymb}
 \usepackage{rotating}
 \usepackage{pdflscape}
-\usepackage{svg}
+% \usepackage{svg}
+% \svgsetup{inkscapeexe=/usr/bin/inkscape}
 
 % ---------- hyperref setup ----------
 \hypersetup{
@@ -104,11 +105,11 @@
 %   \Large\bfseries\MakeUppercase{Monitoring, Health Estimation and}\\
 %   \Large\bfseries\MakeUppercase{Optimization Support System}\\[24pt]
 %   \normalsize\normalfont By\\[24pt]
-%   \large\bfseries A\\
-%   \normalsize Roll: 00\\[6pt]
+%   \large\bfseries Ankon Roy\\
+%   \normalsize Roll: 2107113\\[6pt]
 %   \large\bfseries \&\\[6pt]
-%   \large\bfseries [S]\\
-%   \normalsize Roll: 00\\[24pt]
+%   \large\bfseries MD Ahsanul Islam\\
+%   \normalsize Roll: 2107115\\[24pt]
 %   \includegraphics[width=1.14in,height=1.0in,keepaspectratio]{SS/p9.jpeg}\\[24pt]
 %   \normalsize\bfseries
 %   Department of Computer Science and Engineering\\
@@ -128,11 +129,11 @@
 %   \Large\bfseries Battery Analyzer: An Android-Based Battery Monitoring,\\
 %   Health Estimation and Optimization Support System\\[36pt]
 %   \normalsize By\\[24pt]
-%   \large\bfseries A\\
-%   \normalsize Roll: 00\\[6pt]
+%   \large\bfseries Ankon Roy\\
+%   \normalsize Roll: 2107113\\[6pt]
 %   \large \&\\[6pt]
-%   \large\bfseries [St]\\
-%   \normalsize Roll: 001\\[48pt]
+%   \large\bfseries MD Ahsanul Islam\\
+%   \normalsize Roll: 2107115\\[48pt]
 %   \textbf{Supervisor:}\\[4pt]
 %   \large\bfseries Md. Nazirul Hasan Shawon\\[4pt]
 %   \normalsize Lecturer\\[4pt]
@@ -759,7 +760,7 @@ The app is made up of two top tabs that are navigated using a segmented control:
         settings screen.
   \item \textbf{BatteryPulse} – AI predictor with predicted number of RUL
         cycles left and an AI suggestions panel
-
+\end{itemize}
 \section{Conclusion}
 These five basic elements have been outlined for the Battery Analyzer application: The Android component which will continuously track the battery; The Flutter-based interfaces offered to the end-user; The mathematical formulas used for evaluating the battery's condition; The local database; and the cloud APIs.
 Each design choice was carefully considered based on the constraints and advantages of a normal Android application, which means it will not use rooting and other forms of hacky practices.
@@ -794,12 +795,13 @@ in landscape orientation to accommodate the breadth of the class hierarchy.
 % ------------------------------------------------------------
 \section{Use Case Diagram}
 
-The actors and their interaction with the system are illustrated in Fig.~\ref{fig:use_case}.
+The actors and their interaction with the system are illustrated in Fig.~\ref{fig:use_case.pdf}.
 The main actor is the \textbf{User}, which triggers all monitoring and optimization operations.
 The \textbf{Backend API} actor is involved in all AI-based use case scenarios, while the \textbf{Android Platform} provides the battery data and system settings.
 \begin{figure}[H]
   \centering
-  \includesvg[width=0.82\textwidth]{UML/use_case_diagram}
+  % \includesvg[width=0.82\textwidth]{UML/use_case_diagram}
+  \includegraphics[width=0.82\textwidth]{UML/use_case_diagram.pdf}
   \caption{Use case diagram showing system boundary, actors, and functional
            interactions}
   \label{fig:use_case}
@@ -971,7 +973,7 @@ Launch Flow Controller (P1), Home UI Controller (P2), Battery Monitoring Service
 % ------------------------------------------------------------
 \section{Component Diagram}
 
-Figure~\ref{fig:component_diagram} shows the major software components and their
+Figure~\ref{fig:component_diagram.pdf} shows the major software components and their
 provided/required interfaces. The \textit{Flutter App} boundary contains the
 \textit{Presentation Layer} (UI widgets) and \textit{Service Layer}
 (\texttt{RealBatteryService}). External components include the
@@ -981,8 +983,10 @@ SharedPreferences), and the \textit{Remote Backend} (FastAPI endpoints).
 
 \begin{figure}[H]
   \centering
-  \includesvg[width=\textwidth]{UML/component_diagram}
+  % \includesvg[width=\textwidth]{UML/component_diagram}
+  \includegraphics[width=\textwidth]{UML/component_diagram.pdf}
   \caption{Component diagram — software components, interfaces, and dependencies}
+  % \label{fig:component_diagram}
   \label{fig:component_diagram}
 \end{figure}
 
@@ -991,14 +995,15 @@ SharedPreferences), and the \textit{Remote Backend} (FastAPI endpoints).
 % ------------------------------------------------------------
 \section{Deployment Diagram}
 
-Figure~\ref{fig:deployment_diagram} maps the software components onto physical or
+Figure~\ref{fig:deployment_diagram.pdf} maps the software components onto physical or
 virtual execution environments. The \textit{Android Device} node hosts the Flutter
 app and Kotlin service. The \textit{Cloud Server} node runs the FastAPI backend
 with its PostgreSQL+TimescaleDB database. The two nodes communicate over HTTPS.
 
 \begin{figure}[H]
   \centering
-  \includesvg[width=\textwidth]{UML/deployment_diagram}
+  % \includesvg[width=\textwidth]{UML/deployment_diagram}
+  \includegraphics[width=\textwidth]{UML/deployment_diagram.pdf}
   \caption{Deployment diagram — runtime environments and communication links}
   \label{fig:deployment_diagram}
 \end{figure}
@@ -1186,23 +1191,23 @@ The AI layer has three pillars, each targeting a different analytical need.
 
 \textbf{Pillar 1 — Remaining Useful Life (RUL) Prediction}
 
-The backend XGBoost algorithm takes input from the request body consisting of 12 parameters (cycles run, average current, average voltage, charge, discharge, duration of cycle, state of health percentage, coefficient of variation of current, average power, and Coulombic efficiency), and outputs the number of further cycles the battery will be able to withstand until it reaches the limit of 80% of its designed capacity, and the level of confidence (high/medium/low). Example output: “Battery expected to last for 487 more cycles (high confidence).”
+The algorithm XGBoost used in the backend accepts as input the parameters passed through the request body and includes 12 parameters, which are (cycles run, average current, average voltage, charge, discharge, cycle duration, state of health \%, Coefficient of Variation of current, average power, and Coulombic efficiency) and produces the number of additional cycles that the battery will be able to sustain before hitting its maximum capacity of 80\% of its maximum capacity, and the degree of certainty (high/medium/low).
 \textbf{Pillar 2 — Anomaly Detection}
 
 Isolation Forest Model
-The Isolation Forest model evaluates the input data against the profiles learned and detects five kinds of anomaly:
+An Isolation Forest model measures the input data against the profiles that have been learned and identifies five types of anomalies:
 \begin{enumerate}[leftmargin=1.5em]
-    \item \textbf{Thermal} – Temperature is higher than 55\,°C or increases too rapidly.
-    \item \textbf{Voltage} – Overvoltage more than 4.35\,V or undervoltage lower than 2.5\,V.
-    \item \textbf{Capacity} – Sudden reduction by more than 5\% during one session.
-    \item \textbf{Discharge rate} – Drain much quicker than the discharge capacity suggests.
-    \item \textbf{Charging} – Unusual charging behavior or early charging stoppage.
+    \item \textbf{Thermal} – Above 55\,°C temperature or a sudden increase in temperature.
+    \item \textbf{Voltage} – Overvoltage above 4.35\,V or undervoltage below 2.5\,V.
+    \item \textbf{Capacity} – A sudden drop of more than 5\% in one session.
+    \item \textbf{Discharge rate} – Faster discharging than expected from the discharging capacity.
+    \item \textbf{Charging} – Unexpected behavior or early termination of charging sessions.
 \end{enumerate}
-\textbf{Pillar 3 — Personalised Optimisation Suggestions}
+\textbf{Pillar 3 — Customized Optimization Tips}
 
-The telemetry endpoint collects session information and provides context-specific recommendations.
-The five recommendation categories within BatteryPulse are filled with responses from this API
-using the battery usage history of the user.
+The telemetry API endpoint captures the detail of the session and give relevant advice.
+The five suggestions that are part of BatteryPulse come from this API response
+based on the past usage pattern of the user’s battery.
 
 \begin{table}[H]
 \caption{AI performance benchmarks and expected outcomes}
@@ -1291,72 +1296,73 @@ The Battery Analyzer works as a complete system, as intended. The aims were achi
 
 \section{Intellectual Property Considerations}
 
-Battery Analyzer uses only open-source frameworks and publicly documented Android
-APIs. All third-party packages are used under their respective open licences. The
-NASA and CALCE battery datasets used to train the backend models are acknowledged
-as the property of their originating research institutions.
+All libraries and frameworks employed by Battery Analyzer are free and open source.
+All third-party libraries are utilized in accordance with their individual open-source licenses.
+The NASA and CALCE battery datasets utilized in training the backend models are attributed
+to their respective originators.
 
 \section{Ethical Considerations}
 
-The app collects device usage data such as foreground app names and power draw.
-To handle this ethically:
+The app tracks data like foreground applications' names and power consumption.
+This is done following ethical guidelines:
 \begin{itemize}[leftmargin=1.5em]
-  \item All sensitive permissions (Usage Access, Accessibility Service) require
-        explicit user approval.
-  \item No personally identifiable information is sent to the backend.
-  \item Per-app attribution results are clearly labelled as estimates.
-  \item Users can stop monitoring and clear data at any time.
+  \item All sensitive permissions (Usage Access, Accessibility Service) need
+        the user's explicit permission.
+  \item No personal data is transmitted to the server.
+  \item Attribution for individual apps is always presented as an estimate.
+  \item Monitoring and associated data can be paused by the user at any time.
 \end{itemize}
 
-\section{Safety Considerations}
+\section{Safety Notes}
 
-The app is purely advisory. It does not modify charging voltage, override thermal
-protection circuits, or interact with battery hardware directly. Anomaly alerts
-advise users to reduce device load or seek professional help, not to perform
-hardware modifications.
+The app is entirely non-invasive. It cannot change the charging voltage, disable
+the temperature protection system, or control the battery hardware in any way.
+Notifications about unusual events suggest lowering the workload on the device or
+seeking professional assistance.
 
 \section{Legal Considerations}
 
-All features use Android permissions for their declared purposes only. A future
-public release would need to comply with applicable data protection laws (such as
-GDPR in Europe) and Google Play Store policies.
+Every function is restricted to its stated purpose within the Android permission system.
+Any public release in the future will be subject to data protection laws (e.g., GDPR in Europe)
+and Google Play Store regulations.
 
-\section{Impact on Societal, Health, and Cultural Issues}
+\section{Consequences for Social, Health, and Cultural Challenges}
 
-In Bangladesh and other mobile-first economies, smartphones are the primary device
-for education, communication, and economic activity. Battery reliability directly
-affects access to these services. Battery Analyzer gives users the knowledge to
-extend battery life, which reduces device downtime and supports continued digital
-participation.
+In Bangladesh and elsewhere, where mobile phones dominate computing, the battery’s
+performance plays a critical role in learning, communication, and business. By allowing
+users to optimize the life of their phone’s batteries, Battery Analyzer ensures that users
+are able to use the device continuously, thereby ensuring participation in the digital age.
 
-From a health perspective, early anomaly detection — especially thermal alerts —
-can warn users before a battery event causes physical harm.
+Healthwise, early detection of any anomaly, particularly temperature issues, can help
+prevent a battery problem from causing injury to the user.
 
 \section{Impact on Environment and Sustainability}
+With each device that experiences premature death because of incorrect battery charging practices, electronic waste is generated.
+Battery Analyzer prevents battery failure and improves longevity with actionable data on
+damaging charging behavior. An even slight increase in battery lifetime can make a significant
+difference in reducing hazardous waste, when applied across hundreds and thousands of devices.
+The application itself is optimized to consume less than 2\% battery power hourly.
 
-Every battery that fails early due to poor charging habits adds to electronic waste.
-Battery Analyzer extends battery life by giving users actionable information about
-harmful habits. Even a modest increase in average battery replacement intervals,
-multiplied across many users, represents a meaningful reduction in hazardous waste.
-The app itself is designed to use less than 2\% battery per hour while monitoring.
-
-The environmental benefit goes beyond e-waste. Manufacturing one smartphone emits 50--60 kg of CO₂e, and a failing battery often triggers a full phone replacement. By extending battery life by just one month per user, Battery Analyzer helps delay these replacements. For 100,000 users, this avoids approximately 120 tonnes of CO₂e emissions — equivalent to removing 26 cars from the road for a year.
+There are additional effects of using the application besides reduced electronic waste.
+One mobile phone produces about 50–60 kg of CO\textsubscript{2} during its manufacturing,
+and a dead battery is often a reason for replacing the whole smartphone. Thus, increasing
+the lifetime of the battery just for a month for 100,000 users results in saving 120 tons of CO$_2$ emissions, which equals to eliminating 26 vehicles from the streets.
 
 \begin{table}[H]
-\caption{SHEELC issues summary}
+\caption{Summary of SHEELC concerns}
 \centering
 \small
 \begin{tabular}{lll}
 \toprule
-\textbf{Category} & \textbf{Issue} & \textbf{How it is handled}\\
+\textbf{Concern Type} & \textbf{Concern} & \textbf{Management}\\
 \midrule
-Societal    & Usage data reflects behaviour patterns & Anonymised telemetry, no PII sent\\
-Health      & Alerts may cause user anxiety          & Alerts include context and severity level\\
-Environment & Battery replacement adds e-waste       & Longer battery life reduces waste\\
-Safety      & Advisory tool could be misread         & Clear ``estimate'' labels; no hardware changes\\
-Ethical     & App data involves third-party apps     & Attribution shown as estimate, not fact\\
-Legal       & Sensitive permissions needed           & Explicit user consent required for each\\
-Cultural    & Mobile-dependent societies             & Designed for low-bandwidth environments\\
+Social      & Data collection captures behaviour patterns & Non-anonymous telemetry; no PII collected\\
+Health      & Alert notifications can cause stress        & Notification information provided, alert level stated\\
+Environmental & Battery replacement causes e-waste      & Extended battery life decreases e-waste\\
+Security    & Guidance application can be misunderstood & ``Estimate'' labeling; no modification of hardware\\
+Ethics      & Information about the application requires third-party applications & Information labeled as an estimate, not a fact\\
+Law         & Requires sensitive permissions            & User consent must be explicitly granted for each permission\\
+Culture     & Societies dependent on mobile technology   & Low bandwidth environments supported\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1368,47 +1374,45 @@ Cultural    & Mobile-dependent societies             & Designed for low-bandwidt
 
 \section{Complex Engineering Problems}
 
-\textbf{Problem 1 — Device hardware variability.}
-Different brands of Android devices report battery characteristics with varying degrees of accuracy and reliability. The availability of charge counter support, the accuracy of the voltage readings, and the quality of the temperature sensors are all factors that differ. The system degrades gracefully, and confidence scores are adjusted as the quality of the data deteriorates.
+\textbf{Problem 1 – Hardware variance.}
+Different manufacturers' Android phones have different accuracies when it comes to reporting information about battery health. Charge counter availability, accuracy of voltages, temperature sensors quality are examples of such differences. The degradation is graceful, and confidence scores are decreased accordingly to their quality.
 
-\textbf{Problem 2 — Background execution under Android restrictions.}
-Android's doze mode and battery optimization can kill your background processes. The right Android-compliant way to keep your constant monitoring is to run a foreground service with persistent notification, but careful lifecycle management must be taken to prevent crashes and memory leaks.
+\textbf{Problem 2 – Execution in background on Android devices.}
+Doze mode and battery optimizations can stop your app's activity. The appropriate way for an Android app to work in background is to use foreground service with persistent notifications, although some careful lifecycles managing is necessary.
 
-\textbf{Problem 3 — Health estimation from noisy signals.}
-We cannot directly read battery health through any normal Android API. What we get are (noisy, device dependent) charge counter, voltage, current and temperature. The system tries to guess health from these imprecise numbers and correctly tells us how confident it is.
+\textbf{Problem 3 – Estimating battery health from raw measurements.}
+There is no direct access to health measurements in Android apps. All we get are noisy measurements: charge counter value, voltage, current, and temperature. System uses this information to estimate battery health, and reports its confidence level accordingly.
 
-\textbf{Problem 4 — App attribution without privileged access.}
-There is no true power accounting on a per-application basis in Android, allowing the third-party applications actual power accounting control. The split between 82/18 for foreground/background is a fair assumption, but it is clearly explained that it's an approximation in order not to confuse the users.
+\textbf{Problem 4 - Attribution of applications without special permissions.}
+There is no proper power accounting by application in Android, which means that third-party applications can have power accounting control. The 82/18 ratio for foreground/background applications is a reasonable estimate, although it is stated explicitly that it is only an approximation not to mislead users.
 
-\textbf{Problem 5 — Monitoring overhead management.}
-A battery monitoring app that drains a lot of battery would defeat its own purpose. The sampling interval, computational cost and the frequency of writing to the database have been optimized to ensure that the self-consumption is less than 2\% hour.
+\textbf{Problem 5 - Overhead of data collection management.}
+A battery monitoring application should not consume too much battery energy, because it makes no sense. Sampling intervals, computation cost, and the frequency of storing results in a database were tuned to guarantee that the overhead is below 2\% per hour.
 
-\textbf{Problem 6 — Multi-layer system integration.}
-To bring a Flutter UI, a Dart service, a Kotlin native layer, a SQLite database, and a
-remote REST API together into a single trustworthy system, interfaces must be defined
-carefully, state managed, and errors handled correctly at each border.
+\textbf{Problem 6 - Integration of multi-level systems.}
+To integrate a Flutter user interface, a Dart service, a native Kotlin layer, an SQLite database, and a remote REST API into one reliable system, interfaces need to be designed properly, states need to be managed, and all errors need to be handled at each interface boundary.
 
-\textbf{Problem 7 — Dataset mismatch between lab conditions and real smartphone usage.}
-The NASA and CALCE datasets are collected under controlled lab environments on old, high capacity cells rather than on real smartphone batteries. Unpredictable charge/discharge behavior, like that experienced on a real phone, cannot be replicated and therefore there are certain cases when the model predicts incorrectly or incorrectly identifies an anomaly.
+\textbf{Problem 7 - Inconsistency of dataset between laboratory conditions and real smartphones.}
+The datasets provided by NASA and CALCE have been recorded in laboratory conditions using old high-capacity cells. Unpredictable charge/discharge behavior of a smartphone cell, such as it happens with a real smartphone, could not be reproduced, and hence there are certain cases where the prediction is inaccurate or anomaly identification is incorrect.
 
 \section{Complex Engineering Activities}
 
 \begin{table}[H]
-\caption{Complex engineering activities and how they were addressed}
+\caption{Complicated engineering tasks along with their corresponding solutions}
 \centering
 \small
 \begin{tabular}{ll}
 \toprule
-\textbf{Activity} & \textbf{Approach}\\
+\textbf{Engineering Task} & \textbf{Solution}\\
 \midrule
-Device heterogeneity handling    & Fallback logic; confidence degrades when data is missing\\
-Background service architecture  & Foreground service with lifecycle-aware channel binding\\
-Noisy signal processing          & EWMA smoothing; quality gating below 60\% counter coverage\\
-App attribution model            & Usage Access + 82/18 split; clearly labelled as estimates\\
-Overhead minimisation            & 5-second interval; batched SQLite writes; lazy API dispatch\\
-Multi-layer integration          & Structured method channel contracts; reactive stream design\\
-Anomaly detection integration    & Isolation Forest API with severity classification\\
-Result communication             & Confidence-annotated outputs; estimate labels throughout\\
+Dealing with heterogeneity     & Fallback mechanism, degradation in confidence upon lack of information\\
+Background service implementation  & Foreground service using lifecycle-aware channel binding\\
+Handling noisy signals           & EWMA technique for smoothing; gating by 60\% counter threshold\\
+Attribution model design        & Usage Access along with 82/18 split; clear indication as an estimation\\
+Efficiency                     & Five second period; batching SQLite; deferred API calls\\
+Multiple layers integration     & Method channel contract approach; reactivity-based streams\\
+Anomaly detection              & Isolation Forest algorithm with severity classification\\
+Output conveyance              & Outputs tagged with confidence annotations; estimates indication\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1425,25 +1429,25 @@ This was a project to build, \textbf{Battery Analyzer}; An Android app for batte
 \section{Limitations}
 
 \begin{itemize}[leftmargin=1.5em]
-  \item Per-app battery attribution is an estimate, not a system measurement.
-  \item Charge counter accuracy depends on the device manufacturer's driver.
-  \item Background behaviour can vary across Android versions and OEM skins.
-  \item RUL and anomaly features require network access to the cloud backend.
-  \item RUL and anomaly features may be misleading sometimes.
-  \item Health estimate quality improves only after enough samples are collected.
-  \item The app cannot control charging speed or thermal limits directly.
+  \item Battery usage calculation is an estimation rather than a direct system measurement.
+  \item Charge counter precision relies on the driver provided by the manufacturer.
+  \item App background behavior differs from one Android version and OEM skin to another.
+  \item Network connection to the backend is necessary for RUL and anomaly detection.
+  \item RUL and anomaly detection may be misleading at times.
+  \item Accuracy of battery health estimation increases with enough samples only.
+  \item App cannot regulate charging speed and temperature limits directly.
 \end{itemize}
 
-\section{Recommendations and Future Works}
+\section{Recommendations and Future Work}
 
 \begin{itemize}[leftmargin=1.5em]
-  \item Add on-device ML so RUL prediction works offline.
-  \item Use LSTM models for better anomaly detection over time.
-  \item Add push notifications for thermal warnings and health milestones.
-  \item Sync session history to the cloud for cross-device access.
-  \item Improve calibration for devices with unreliable charge counters.
-  \item Test on a wider range of Android devices and versions.
-  \item Add export-ready charts for sharing battery reports.
+  \item Incorporate on-device machine learning algorithms for RUL estimation without Internet.
+  \item Develop long short-term memory neural networks for anomalies detection.
+  \item Introduce push notifications in case of thermal risks and battery health events.
+  \item Synchronize session logs with cloud backend to access data from any device.
+  \item Adjust charge counter calibration to improve its precision on some devices.
+  \item Perform tests on other Android versions and models.
+  \item Create visual charts of battery status to be exported for further use.
 \end{itemize}
 
 % ============================================================
