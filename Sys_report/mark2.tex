@@ -33,7 +33,6 @@
 \usepackage{url}
 \usepackage{amssymb}
 \usepackage{rotating}
-\usepackage{pdflscape}
 % \usepackage{svg}
 % \svgsetup{inkscapeexe=/usr/bin/inkscape}
 
@@ -784,18 +783,16 @@ In this chapter, all the UML diagrams are described that describe the architectu
 
 The class diagram below captures all major classes, their attributes and
 operations, and the relationships between them. The diagram spans the entire page
-in landscape orientation to accommodate the breadth of the class hierarchy.
+in portrait orientation while preserving the breadth of the class hierarchy.
 
-\begin{landscape}
-  \begin{figure}[p]
-    \centering
-    \includegraphics[width=\linewidth,height=0.90\textheight,keepaspectratio]%
+\begin{figure}[p]
+  \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]%
       {UML/Class.png}
     \caption{Class diagram of Battery Analyzer — full class hierarchy and
              relationships}
     \label{fig:class_diagram}
-  \end{figure}
-\end{landscape}
+\end{figure}
 
 % ------------------------------------------------------------
 %  2. USE CASE DIAGRAM
@@ -821,16 +818,14 @@ The \textbf{Backend API} actor is involved in all AI-based use case scenarios, w
 
 Figure~\ref{fig:sequence} depicts a sequence diagram that describes the communication process in terms of
 message passing during \textbf{App Launch to Home Screen}. The following figure shows a call sequence from the time the user launches the application until \texttt{BatteryAnalyzerApp} creates \texttt{LaunchFlowScreen}, loads \texttt{tour} data from \texttt{SharedPreferences}, displays \texttt{QuickTourPage}, then launches the home screen.
-\begin{landscape}
-  \begin{figure}[p]
-    \centering
-    \includegraphics[width=\linewidth,height=0.85\textheight,keepaspectratio]%
+\begin{figure}[p]
+  \centering
+    \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]%
       {UML/Sequence.png}
     \caption{Sequence diagram — app launch flow from start to home screen with
              optional quick tour}
     \label{fig:sequence}
-  \end{figure}
-\end{landscape}
+\end{figure}
 
 % ------------------------------------------------------------
 %  4. STATE DIAGRAMS — three diagrams, one per sub-section
@@ -964,16 +959,14 @@ entities are shown: \textbf{User}, \textbf{Android Platform APIs},
 Launch Flow Controller (P1), Home UI Controller (P2), Battery Monitoring Service
 (P3), and Local Persistence (P4) — are connected by labelled data flows.
 
-\begin{landscape}
-  \begin{figure}[p]
-    \centering
-    \includegraphics[width=\linewidth,height=0.88\textheight,keepaspectratio]%
-      {UML/DataFlow.png}
+\begin{figure}[p]
+  \centering
+    \includegraphics[width=\textwidth,height=0.84\textheight,keepaspectratio]%
+      {UML/DataFlow_portrait.png}
     \caption{Level-1 data flow diagram — external entities, core processes, and
              data stores}
     \label{fig:data_flow}
-  \end{figure}
-\end{landscape}
+\end{figure}
 
 % ------------------------------------------------------------
 %  7. COMPONENT DIAGRAM

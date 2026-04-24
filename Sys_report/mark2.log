@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.11)  22 APR 2026 21:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.11)  24 APR 2026 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -519,23 +519,10 @@ Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 \rot@float@box=\box67
 \rot@mess@toks=\toks33
 )
-(C:\Users\Emon\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
-Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
-
-(C:\Users\Emon\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nome
-tadata.sty
-Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
-F (HO)
-
-(C:\Users\Emon\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-))
-Package hyperref Info: Option `colorlinks' set `true' on input line 51.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 51.
+Package hyperref Info: Option `colorlinks' set `true' on input line 50.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 50.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 9
-9.
+8.
 
 (C:\Users\Emon\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -547,24 +534,24 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (mark2.aux)
 \openout1 = `mark2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 99.
-LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -636,13 +623,13 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 99.
-Package microtype Info: Applying patch `item' on input line 99.
-Package microtype Info: Applying patch `toc' on input line 99.
-Package microtype Info: Applying patch `eqnum' on input line 99.
-Package microtype Info: Applying patch `footnote' on input line 99.
-Package microtype Info: Applying patch `verbatim' on input line 99.
-LaTeX Info: Redefining \microtypesetup on input line 99.
+LaTeX Info: Redefining \microtypecontext on input line 98.
+Package microtype Info: Applying patch `item' on input line 98.
+Package microtype Info: Applying patch `toc' on input line 98.
+Package microtype Info: Applying patch `eqnum' on input line 98.
+Package microtype Info: Applying patch `footnote' on input line 98.
+Package microtype Info: Applying patch `verbatim' on input line 98.
+LaTeX Info: Redefining \microtypesetup on input line 98.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -657,7 +644,7 @@ Package microtype Info: No adjustment of character kerning.
 (C:\Users\Emon\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Package hyperref Info: Link coloring ON on input line 99.
+Package hyperref Info: Link coloring ON on input line 98.
 
 (mark2.out) (mark2.out)
 \@outlinefile=\write3
@@ -666,12 +653,12 @@ Package hyperref Info: Link coloring ON on input line 99.
 <images/logo.png, id=333, 280.4076pt x 318.2289pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 106.
+Package pdftex.def Info: images/logo.png  used on input line 105.
 (pdftex.def)             Requested size: 131.55557pt x 149.29567pt.
 <SS/p9.jpeg, id=335, 1264.725pt x 2810.5pt>
 File: SS/p9.jpeg Graphic file (type jpg)
 <use SS/p9.jpeg>
-Package pdftex.def Info: SS/p9.jpeg  used on input line 118.
+Package pdftex.def Info: SS/p9.jpeg  used on input line 117.
 (pdftex.def)             Requested size: 32.51733pt x 72.26076pt.
  [1
 
@@ -732,7 +719,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
  [8]
 Chapter 1.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-32.
+31.
 (C:\Users\Emon\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -740,7 +727,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.242 
+l.241 
        [1
 
 
@@ -755,255 +742,243 @@ Chapter 3.
 ]
 File: SS/p9.jpeg Graphic file (type jpg)
 <use SS/p9.jpeg>
-Package pdftex.def Info: SS/p9.jpeg  used on input line 538.
+Package pdftex.def Info: SS/p9.jpeg  used on input line 537.
 (pdftex.def)             Requested size: 184.17511pt x 409.2489pt.
 <SS/p12.jpeg, id=612, 632.3625pt x 1405.25pt>
 File: SS/p12.jpeg Graphic file (type jpg)
 <use SS/p12.jpeg>
-Package pdftex.def Info: SS/p12.jpeg  used on input line 544.
+Package pdftex.def Info: SS/p12.jpeg  used on input line 543.
 (pdftex.def)             Requested size: 184.17511pt x 409.27034pt.
  [10] [11 <./SS/p12.jpeg>]
-Overfull \hbox (0.29482pt too wide) in paragraph at lines 582--583
+Overfull \hbox (0.29482pt too wide) in paragraph at lines 581--582
 []\OT1/ptm/m/n/12 (-20) Once Flut-ter gets this data, \OT1/pcr/m/n/12 RealBatte
 ryService \OT1/ptm/m/n/12 (-20) con-verts this data to a \OT1/pcr/m/n/12 Batter
 yData
  []
 
 [12] [13] [14]
-Overfull \hbox (57.60158pt too wide) in paragraph at lines 731--740
+Overfull \hbox (57.60158pt too wide) in paragraph at lines 730--739
  [][] 
  []
 
 [15] [16]
 Chapter 4.
+<UML/Class.png, id=688, 8222.72pt x 5746.46875pt>
+File: UML/Class.png Graphic file (type png)
+<use UML/Class.png>
+Package pdftex.def Info: UML/Class.png  used on input line 791.
+(pdftex.def)             Requested size: 438.5122pt x 306.45537pt.
+<UML/use_case_diagram.pdf, id=690, 682.55pt x 622.325pt>
+File: UML/use_case_diagram.pdf Graphic file (type pdf)
+<use UML/use_case_diagram.pdf>
+Package pdftex.def Info: UML/use_case_diagram.pdf  used on input line 808.
+(pdftex.def)             Requested size: 359.58478pt x 327.85553pt.
 [17
 
 ]
-<UML/Class.png, id=692, 8222.72pt x 5746.46875pt>
-File: UML/Class.png Graphic file (type png)
-<use UML/Class.png>
-Package pdftex.def Info: UML/Class.png  used on input line 793.
-(pdftex.def)             Requested size: 564.608pt x 394.57773pt.
- [18 <./UML/Class.png>]
-<UML/use_case_diagram.pdf, id=699, 682.55pt x 622.325pt>
-File: UML/use_case_diagram.pdf Graphic file (type pdf)
-<use UML/use_case_diagram.pdf>
-Package pdftex.def Info: UML/use_case_diagram.pdf  used on input line 811.
-(pdftex.def)             Requested size: 359.58478pt x 327.85553pt.
- [19
-
-
- <./UML/use_case_diagram.pdf>]
-<UML/Sequence.png, id=706, 8152.4575pt x 4958.525pt>
+<UML/Sequence.png, id=696, 8152.4575pt x 4958.525pt>
 File: UML/Sequence.png Graphic file (type png)
 <use UML/Sequence.png>
-Package pdftex.def Info: UML/Sequence.png  used on input line 828.
-(pdftex.def)             Requested size: 612.7763pt x 372.7056pt.
- [20 <./UML/Sequence.png>]
-<UML/LanchFlowState.png, id=713, 2523.4275pt x 4552.00626pt>
+Package pdftex.def Info: UML/Sequence.png  used on input line 824.
+(pdftex.def)             Requested size: 438.49704pt x 266.70468pt.
+<UML/LanchFlowState.png, id=698, 2523.4275pt x 4552.00626pt>
 File: UML/LanchFlowState.png Graphic file (type png)
 <use UML/LanchFlowState.png>
-Package pdftex.def Info: UML/LanchFlowState.png  used on input line 853.
+Package pdftex.def Info: UML/LanchFlowState.png  used on input line 848.
 (pdftex.def)             Requested size: 315.7307pt x 569.4856pt.
- [21
-
-
-]
-<UML/Monitoring_life_cycle_state.png, id=719, 4504.83pt x 3600.45125pt>
+ [18 <./UML/use_case_diagram.pdf>] [19 <./UML/Class.png> <./UML/Sequence.png>]
+<UML/Monitoring_life_cycle_state.png, id=711, 4504.83pt x 3600.45125pt>
 File: UML/Monitoring_life_cycle_state.png Graphic file (type png)
 <use UML/Monitoring_life_cycle_state.png>
 Package pdftex.def Info: UML/Monitoring_life_cycle_state.png  used on input lin
-e 869.
+e 864.
 (pdftex.def)             Requested size: 372.73967pt x 297.87596pt.
- [22 <./UML/LanchFlowState.png>]
-<UML/Battery_session_state.png, id=727, 4639.3325pt x 2760.3125pt>
+ [20 <./UML/LanchFlowState.png>]
+<UML/Battery_session_state.png, id=718, 4639.3325pt x 2760.3125pt>
 File: UML/Battery_session_state.png Graphic file (type png)
 <use UML/Battery_session_state.png>
-Package pdftex.def Info: UML/Battery_session_state.png  used on input line 888.
+Package pdftex.def Info: UML/Battery_session_state.png  used on input line 883.
 
 (pdftex.def)             Requested size: 394.66002pt x 234.81299pt.
- [23 <./UML/Monitoring_life_cycle_state.png>]
-<UML/activity.png, id=733, 3174.86125pt x 8222.72pt>
+ [21 <./UML/Monitoring_life_cycle_state.png>]
+<UML/activity.png, id=724, 3174.86125pt x 8222.72pt>
 File: UML/activity.png Graphic file (type png)
 <use UML/activity.png>
-Package pdftex.def Info: UML/activity.png  used on input line 908.
+Package pdftex.def Info: UML/activity.png  used on input line 903.
 (pdftex.def)             Requested size: 192.94728pt x 499.61534pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 920--922
+Underfull \hbox (badness 10000) in paragraph at lines 915--917
 []\OT1/ptm/b/n/10.95 (+20) App starts \OT1/ptm/m/n/10.95 (+20) | the en-try poi
 nt;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--927
+Underfull \hbox (badness 10000) in paragraph at lines 919--922
 []\OT1/ptm/b/n/10.95 (+20) Load tour com-ple-tion flag \OT1/ptm/m/n/10.95 (+20)
  |
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--927
+Underfull \hbox (badness 10000) in paragraph at lines 919--922
 \OT1/pcr/m/n/10.95 SharedPreferences \OT1/ptm/m/n/10.95 (+20) is queried asyn-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 946--949
+Underfull \hbox (badness 10000) in paragraph at lines 941--944
 []\OT1/ptm/b/n/10.95 (+20) Bootstrap mon-i-tor-ing \OT1/ptm/m/n/10.95 (+20) |
  []
 
 
-Underfull \hbox (badness 4531) in paragraph at lines 946--949
+Underfull \hbox (badness 4531) in paragraph at lines 941--944
 \OT1/pcr/m/n/10.95 HomeScreen.initState \OT1/ptm/m/n/10.95 (+20) sets up stream
 
  []
 
-[24 <./UML/Battery_session_state.png>] [25 <./UML/activity.png>] [26]
-<UML/DataFlow.png, id=759, 8221.71625pt x 3222.0375pt>
-File: UML/DataFlow.png Graphic file (type png)
-<use UML/DataFlow.png>
-Package pdftex.def Info: UML/DataFlow.png  used on input line 971.
-(pdftex.def)             Requested size: 700.40482pt x 274.48412pt.
- [27 <./UML/DataFlow.png>]
-<UML/component_diagram.pdf, id=766, 682.55pt x 562.1pt>
+[22 <./UML/Battery_session_state.png>] [23 <./UML/activity.png>]
+<UML/DataFlow_portrait.png, id=747, 1957.3125pt x 767.11594pt>
+File: UML/DataFlow_portrait.png Graphic file (type png)
+<use UML/DataFlow_portrait.png>
+Package pdftex.def Info: UML/DataFlow_portrait.png  used on input line 965.
+(pdftex.def)             Requested size: 438.49475pt x 171.8562pt.
+<UML/component_diagram.pdf, id=749, 682.55pt x 562.1pt>
 File: UML/component_diagram.pdf Graphic file (type pdf)
 <use UML/component_diagram.pdf>
-Package pdftex.def Info: UML/component_diagram.pdf  used on input line 994.
+Package pdftex.def Info: UML/component_diagram.pdf  used on input line 987.
 (pdftex.def)             Requested size: 438.51411pt x 361.13223pt.
-<UML/deployment_diagram.pdf, id=768, 712.6625pt x 521.95pt>
+ [24 <./UML/component_diagram.pdf>]
+<UML/deployment_diagram.pdf, id=756, 712.6625pt x 521.95pt>
 File: UML/deployment_diagram.pdf Graphic file (type pdf)
 <use UML/deployment_diagram.pdf>
-Package pdftex.def Info: UML/deployment_diagram.pdf  used on input line 1013.
+Package pdftex.def Info: UML/deployment_diagram.pdf  used on input line 1006.
 (pdftex.def)             Requested size: 438.51411pt x 321.1606pt.
- [28
-
-
- <./UML/component_diagram.pdf>] [29 <./UML/deployment_diagram.pdf>]
+ [25 <./UML/deployment_diagram.pdf>] [26 <./UML/DataFlow_portrait.png>]
 Chapter 5.
 
-Overfull \hbox (19.36311pt too wide) in paragraph at lines 1055--1070
+Overfull \hbox (19.36311pt too wide) in paragraph at lines 1048--1063
  [][] 
  []
 
-[30
+[27
 
 ]
-<SS/p3.jpeg, id=784, 1264.725pt x 2901.84125pt>
+<SS/p3.jpeg, id=771, 1264.725pt x 2901.84125pt>
 File: SS/p3.jpeg Graphic file (type jpg)
 <use SS/p3.jpeg>
-Package pdftex.def Info: SS/p3.jpeg  used on input line 1099.
+Package pdftex.def Info: SS/p3.jpeg  used on input line 1092.
 (pdftex.def)             Requested size: 184.17511pt x 422.54948pt.
-<SS/p5.jpeg, id=785, 1264.725pt x 2892.8075pt>
+<SS/p5.jpeg, id=772, 1264.725pt x 2892.8075pt>
 File: SS/p5.jpeg Graphic file (type jpg)
 <use SS/p5.jpeg>
-Package pdftex.def Info: SS/p5.jpeg  used on input line 1105.
+Package pdftex.def Info: SS/p5.jpeg  used on input line 1098.
 (pdftex.def)             Requested size: 184.17511pt x 421.23404pt.
- [31] [32 <./SS/p3.jpeg> <./SS/p5.jpeg>]
-<SS/p8.jpeg, id=799, 1264.725pt x 2810.5pt>
+ [28] [29 <./SS/p3.jpeg> <./SS/p5.jpeg>]
+<SS/p8.jpeg, id=787, 1264.725pt x 2810.5pt>
 File: SS/p8.jpeg Graphic file (type jpg)
 <use SS/p8.jpeg>
-Package pdftex.def Info: SS/p8.jpeg  used on input line 1140.
+Package pdftex.def Info: SS/p8.jpeg  used on input line 1133.
 (pdftex.def)             Requested size: 184.17511pt x 409.2489pt.
-<SS/p10.jpeg, id=800, 948.54375pt x 2275.75218pt>
+<SS/p10.jpeg, id=788, 948.54375pt x 2275.75218pt>
 File: SS/p10.jpeg Graphic file (type jpg)
 <use SS/p10.jpeg>
-Package pdftex.def Info: SS/p10.jpeg  used on input line 1146.
+Package pdftex.def Info: SS/p10.jpeg  used on input line 1139.
 (pdftex.def)             Requested size: 184.17511pt x 441.87738pt.
- [33 <./SS/p8.jpeg> <./SS/p10.jpeg>]
+ [30 <./SS/p8.jpeg> <./SS/p10.jpeg>]
 File: SS/p12.jpeg Graphic file (type jpg)
 <use SS/p12.jpeg>
-Package pdftex.def Info: SS/p12.jpeg  used on input line 1183.
+Package pdftex.def Info: SS/p12.jpeg  used on input line 1176.
 (pdftex.def)             Requested size: 197.33pt x 438.49628pt.
- [34] [35]
-Overfull \hbox (19.75769pt too wide) in paragraph at lines 1223--1236
+ [31] [32]
+Overfull \hbox (19.75769pt too wide) in paragraph at lines 1216--1229
  [][] 
  []
 
-[36] [37] [38]
+[33] [34] [35]
 Chapter 6.
-[39
+[36
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1366--1366
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1359
 []|\OT1/ptm/m/n/10.95 (+20) Data col-lec-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1366--1366
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1359
 \OT1/ptm/m/n/10.95 (+20) cap-tures be-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1366--1367
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1360
 []|\OT1/ptm/m/n/10.95 (+20) Non-anonymous
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 1366--1367
+Underfull \hbox (badness 5331) in paragraph at lines 1359--1360
 \OT1/ptm/m/n/10.95 (+20) teleme-try; no PII
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1368--1368
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1361
 []|\OT1/ptm/m/n/10.95 (+20) Battery re-place-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1368--1368
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1361
 \OT1/ptm/m/n/10.95 (+20) ment causes
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 1369--1370
+Underfull \hbox (badness 1810) in paragraph at lines 1362--1363
 \OT1/ptm/m/n/10.95 (+20) no mod-i-fi-ca-tion of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1372
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1365
 []|\OT1/ptm/m/n/10.95 (+20) Societies de-pen-
  []
 
 
-Underfull \hbox (badness 5862) in paragraph at lines 1372--1372
+Underfull \hbox (badness 5862) in paragraph at lines 1365--1365
 \OT1/ptm/m/n/10.95 (+20) dent on mo-bile
  []
 
-[40]
+[37]
 Chapter 7.
-[41
+[38
 
 ]
-Overfull \hbox (64.75128pt too wide) in paragraph at lines 1411--1425
+Overfull \hbox (64.75128pt too wide) in paragraph at lines 1404--1418
  [][] 
  []
 
-[42]
+[39]
 Chapter 8.
-[43
+[40
 
 ]
-Overfull \hbox (58.50038pt too wide) in paragraph at lines 1472--1474
+Overfull \hbox (58.50038pt too wide) in paragraph at lines 1465--1467
 [][]$\OT1/pcr/m/n/12 https : / / developer . android . com / reference / androi
 d / os / BatteryManager$[][] 
  []
 
 
-Overfull \hbox (124.66035pt too wide) in paragraph at lines 1475--1477
+Overfull \hbox (124.66035pt too wide) in paragraph at lines 1468--1470
 \OT1/pcr/m/n/12 developer . android . com / develop / background-[]work / servi
 ces / foreground-[]services$[][] 
  []
 
 
-Overfull \hbox (21.74722pt too wide) in paragraph at lines 1497--1499
+Overfull \hbox (21.74722pt too wide) in paragraph at lines 1490--1492
 []\OT1/ptm/m/n/12 (-20) Android De-vel-op-ers, ``Us-ageS-tats-Man-ager.'' [On-l
 ine]. Avail-able: [][]$\OT1/pcr/m/n/12 https : / / developer .
  []
 
 
-Overfull \hbox (0.9004pt too wide) in paragraph at lines 1497--1499
+Overfull \hbox (0.9004pt too wide) in paragraph at lines 1490--1492
 \OT1/pcr/m/n/12 android . com / reference / android / app / usage / UsageStatsM
 anager$[][] 
  []
 
-(mark2.bbl [44
+(mark2.bbl [41
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 9--14
@@ -1059,7 +1034,7 @@ Overfull \hbox (10.49255pt too wide) in paragraph at lines 23--29
 rformance/$[][]\OT1/ptm/m/n/12 (-20) .
  []
 
-) [45
+) [42
 
 ] (mark2.aux)
  ***********
@@ -1070,10 +1045,10 @@ Package rerunfilecheck Info: File `mark2.out' has not changed.
 (rerunfilecheck)             Checksum: 6A139B2E3CE670B35B3CA2FD7517F450;16735.
  ) 
 Here is how much of TeX's memory you used:
- 17362 strings out of 467871
- 275407 string characters out of 5418860
- 727374 words of memory out of 5000000
- 45314 multiletter control sequences out of 15000+600000
+ 17286 strings out of 467871
+ 273287 string characters out of 5418860
+ 726555 words of memory out of 5000000
+ 45251 multiletter control sequences out of 15000+600000
  674003 words of font info for 353 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,13n,79p,1196b,664s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1094,9 +1069,9 @@ pfb><C:/Users/Emon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.p
 fb><C:/Users/Emon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pf
 b><C:/Users/Emon/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on mark2.pdf (54 pages, 6979228 bytes).
+Output written on mark2.pdf (51 pages, 6532718 bytes).
 PDF statistics:
- 1013 PDF objects out of 1200 (max. 8388607)
- 280 named destinations out of 1000 (max. 500000)
+ 1001 PDF objects out of 1200 (max. 8388607)
+ 277 named destinations out of 1000 (max. 500000)
  69870 words of extra memory for PDF output out of 74296 (max. 10000000)
 
