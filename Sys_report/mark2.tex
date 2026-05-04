@@ -1,6 +1,6 @@
 % ============================================================
 %  CSE 3200 – System Development Project Report
-%  Battery Analyzer
+%  EcoBattLens
 %  LaTeX Source
 % ============================================================
 
@@ -45,7 +45,7 @@
   filecolor=black,
   bookmarksnumbered=true,
   pdfborder={0 0 0},
-  pdftitle={Battery Analyzer: System Development Project Report},
+  pdftitle={EcoBattLens: System Development Project Report},
   pdfauthor={Ankon Roy and MD Ahsanul Islam}
 }
 
@@ -86,7 +86,7 @@
 % ---------- header / footer ----------
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[C]{\small Battery Analyzer}
+\fancyhead[C]{\small EcoBattLens}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -100,55 +100,182 @@
 % ============================================================
 %  COVER PAGE
 % ============================================================
-\thispagestyle{empty}
-\begin{center}
-  \includegraphics[width=0.3\textwidth]{images/logo.png}
-  \vspace{0.3in}
-  \large\bfseries \\ CSE 3200: System Development Project\\[12pt]
-  \Large\bfseries\MakeUppercase{Battery Analyzer: An Android-Based Battery}\\
-  \Large\bfseries\MakeUppercase{Monitoring, Health Estimation and}\\
-  \Large\bfseries\MakeUppercase{Optimization Support System}\\[24pt]
-  \normalsize\normalfont By\\[24pt]
-  \large\bfseries Ankon Roy\\
-  \normalsize Roll: 2107113\\[6pt]
-  \large\bfseries \&\\[6pt]
-  \large\bfseries MD Ahsanul Islam\\
-  \normalsize Roll: 2107115\\[24pt]
-  \includegraphics[width=1.14in,height=1.0in,keepaspectratio]{SS/p9.jpeg}\\[24pt]
-  \normalsize\bfseries
-  Department of Computer Science and Engineering\\
-  Khulna University of Engineering \& Technology\\
-  Khulna 9203, Bangladesh\\
-  {April, 2026}
-\end{center}
-\clearpage
+% \thispagestyle{empty}
+% \begin{center}
+%   \includegraphics[width=0.3\textwidth]{images/logo.png}
+%   \vspace{0.3in}
+%   \large\bfseries \\ CSE 3200: System Development Project\\[12pt]
+%   \Large\bfseries\MakeUppercase{EcoBattLens: An Android-Based Battery}\\
+%   \Large\bfseries\MakeUppercase{Monitoring, Health Estimation and}\\
+%   \Large\bfseries\MakeUppercase{Optimization Support System}\\[24pt]
+%   \normalsize\normalfont By\\[24pt]
+%   \large\bfseries Ankon Roy\\
+%   \normalsize Roll: 2107113\\[6pt]
+%   \large\bfseries \&\\[6pt]
+%   \large\bfseries MD Ahsanul Islam\\
+%   \normalsize Roll: 2107115\\[24pt]
+%   \includegraphics[width=1.14in,height=1.0in,keepaspectratio]{SS/p9.jpeg}\\[24pt]
+%   \normalsize\bfseries
+%   Department of Computer Science and Engineering\\
+%   Khulna University of Engineering \& Technology\\
+%   Khulna 9203, Bangladesh\\
+%   {April, 2026}
+% \end{center}
+% \clearpage
 
-% % ============================================================
-% %  TITLE PAGE
-% % ============================================================
+% \documentclass[12pt,a4paper]{report}
+% \usepackage[top=1.2in, bottom=1.0in, left=1.2in, right=1.0in]{geometry}
+% \usepackage{graphicx}
+% \usepackage{setspace}
+% \usepackage{mathptmx} % Times Roman font
+
+% \begin{document}
+
+\thispagestyle{empty}
+\setstretch{1.5}
+
+\begin{center}
+% Course code - 14pt, Normal, Centered
+{\fontsize{14}{21}\selectfont CSE 3200: System Development Project}
+
+\vspace{12pt}
+
+% Title - 18pt, Bold, Centered, Small Caps, 1.5 line spacing
+{\fontsize{18}{27}\selectfont\bfseries\scshape
+ECOBATTLENS: AN ANDROID-BASED BATTERY MONITORING, HEALTH ESTIMATION AND OPTIMIZATION SUPPORT SYSTEM}
+
+% 2 blank lines of 12pt with 1.5 line spacing (= 36pt)
+\vspace{36pt}
+
+% "By" - 14pt, Normal, Centered
+{\fontsize{14}{21}\selectfont By}
+
+% 3 blank lines of 12pt (= 54pt)
+\vspace{54pt}
+
+% First author - 14pt, bold, Centered
+{\fontsize{14}{21}\selectfont\bfseries Ankon Roy}\\[0pt]
+% Roll - 14pt, Normal, Centered
+{\fontsize{14}{21}\selectfont Roll: 2107113}
+
+\vspace{12pt}
+
+% "&" - 14pt, bold, Centered
+{\fontsize{14}{21}\selectfont\bfseries \&}
+
+\vspace{12pt}
+
+% Second author - 14pt, bold, Centered
+{\fontsize{14}{21}\selectfont\bfseries MD Ahsanul Islam}\\[0pt]
+% Roll - 14pt, Normal, Centered
+{\fontsize{14}{21}\selectfont Roll: 2107115}
+
+\vspace{24pt}
+
+% KUET Logo - 1.14" x 1.0"
+\includegraphics[width=1.14in,height=1.0in,keepaspectratio]{images/logo.png}
+
+% 2 blank lines of 12pt (= 36pt)
+\vspace{36pt}
+
+% Department info - 14pt, Normal, Centered
+{\fontsize{14}{21}\selectfont
+Department of Computer Science and Engineering\\
+Khulna University of Engineering \& Technology\\
+Khulna 9203, Bangladesh}
+
+\vspace{12pt}
+
+% Date - 12pt, bold, Centered, 1.2 line spacing
+{\fontsize{12}{14.4}\selectfont\bfseries April, 2026}
+
+\end{center}
+
+\clearpage
+% \end{document}
+
+% % % ============================================================
+% % %  TITLE PAGE
+% % % ============================================================
+% \thispagestyle{plain}
+% \pagenumbering{roman}
+% \setcounter{page}{1}
+% \begin{center}
+%   \Large\bfseries EcoBattLens: An Android-Based Battery Monitoring,\\
+%   Health Estimation and Optimization Support System\\[36pt]
+%   \normalsize By\\[24pt]
+%   \large\bfseries Ankon Roy\\
+%   \normalsize Roll: 2107113\\[6pt]
+%   \large \&\\[6pt]
+%   \large\bfseries MD Ahsanul Islam\\
+%   \normalsize Roll: 2107115\\[48pt]
+%   \textbf{Supervisor:}\\[4pt]
+%   \large\bfseries Md. Nazirul Hasan Shawon\\[4pt]
+%   \normalsize Lecturer\\[4pt]
+%    \noindent\makebox[3in]{\hrulefill} \hfill \makebox[2in]{\hrulefill}\\
+%   \noindent\makebox[3in][l]{(Supervisor's Signature)} \hfill \makebox[2in][l]{(Date)}\\[12pt]
+%   Department of Computer Science and Engineering\\
+%   Khulna University of Engineering \& Technology\\[48pt]
+%   \normalsize
+%   Department of Computer Science and Engineering\\
+%   Khulna University of Engineering \& Technology\\
+%   Khulna 9203, Bangladesh\\[6pt]
+%   \large\bfseries April, 2026
+% \end{center}
+% \clearpage
+
+% ============================================================
+%  TITLE PAGE
+% ============================================================
 \thispagestyle{plain}
 \pagenumbering{roman}
 \setcounter{page}{1}
 \begin{center}
-  \Large\bfseries Battery Analyzer: An Android-Based Battery Monitoring,\\
-  Health Estimation and Optimization Support System\\[36pt]
-  \normalsize By\\[24pt]
-  \large\bfseries Ankon Roy\\
-  \normalsize Roll: 2107113\\[6pt]
-  \large \&\\[6pt]
-  \large\bfseries MD Ahsanul Islam\\
-  \normalsize Roll: 2107115\\[48pt]
-  \textbf{Supervisor:}\\[4pt]
-  \large\bfseries Md. Nazirul Hasan Shawon\\[4pt]
-  \normalsize Lecturer\\[4pt]
-  Department of Computer Science and Engineering\\
-  Khulna University of Engineering \& Technology\\[48pt]
-  \normalsize
-  Department of Computer Science and Engineering\\
-  Khulna University of Engineering \& Technology\\
-  Khulna 9203, Bangladesh\\[6pt]
-  \large\bfseries April, 2026
+  {\fontsize{18}{27}\selectfont\bfseries
+    EcoBattLens: An Android-Based Battery Monitoring,\\
+    Health Estimation and Optimization Support System
+  }
+  \vspace{3\baselineskip}
+  {\fontsize{12}{18}\selectfont By}
+  \vspace{2\baselineskip}
+
+  {\fontsize{12}{18}\selectfont\bfseries Ankon Roy}\\
+  {\fontsize{12}{18}\selectfont Roll: 2107113}
+
+  \vspace{\baselineskip}
+  {\fontsize{12}{18}\selectfont\bfseries \&}
+  \vspace{\baselineskip}
+
+  {\fontsize{12}{18}\selectfont\bfseries MD Ahsanul Islam}\\
+  {\fontsize{12}{18}\selectfont Roll: 2107115}
 \end{center}
+
+\vspace{4\baselineskip}
+
+\noindent{\fontsize{12}{18}\selectfont\bfseries Supervisor:}\\[6pt]
+\hspace*{0.8in}{\fontsize{12}{18}\selectfont\bfseries Md. Nazirul Hasan Shawon}\\
+\hspace*{0.8in}{\fontsize{12}{18}\selectfont
+  Lecturer\\
+  Department of Computer Science and Engineering\\
+  Khulna University of Engineering \& Technology
+}
+\\
+\\
+\\
+\\
+\hfill\underline{\hspace{1.5in}}\\[2pt]
+\hfill{\fontsize{12}{18}\selectfont Signature}
+
+\vspace{\fill}
+\begin{center}
+  {\fontsize{12}{18}\selectfont
+    Department of Computer Science and Engineering\\
+    Khulna University of Engineering \& Technology\\
+    Khulna 9203, Bangladesh\\
+  }
+  {\fontsize{16}{24}\selectfont April, 2026}
+\end{center}
+
 \clearpage
 
 % ============================================================
@@ -164,7 +291,7 @@ Finally, we must thank our friends and family. We are very grateful to them for 
 
 \vspace{24pt}
 \begin{flushright}
-\textbf{Authors}
+\textbf{Ankon Roy and MD Ahsanul Islam}
 \end{flushright}
 \clearpage
 
@@ -174,19 +301,7 @@ Finally, we must thank our friends and family. We are very grateful to them for 
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-People use their smartphones a lot during the day, to communicate, study, play games or work. Because of this, the \textbf{battery} of the smartphone is very important, however the average user doesn't know anything about it other than the percentage left. They do not know the actual \textbf{state of the battery}, which applications consume battery rapidly or if they are \textbf{charging it in the right way} or not.
-
-In this project we developed a new application for Android, named \textbf{``Battery Analyzer''} that will perform several functions in a single application. This will observe the battery in \textbf{real time}, keep \textbf{history}, predict the \textbf{state of the battery} and calculate which apps consume the most battery along with \textbf{suggestions} to conserve battery.
-
-The app was built by using several different tools. \textbf{Flutter} was used for the UI part, the core application logic was implemented in \textbf{Dart} and to interface with Android, \textbf{Kotlin} was used. \textbf{SQLite} was used to store data locally in the device. Also the app makes calls to \textbf{online services} in order to get smarter predictions.
-
-The application collects various data from the battery: \textbf{charge level, current, voltage and temperature}, also it detects if the phone is charging or not. By processing the data collected, the app determines several parameters that describe the battery. The parameters are: \textbf{battery health} in percentage, a \textbf{confidence value} on how much the application is confident on the percentage calculated, a \textbf{stress score} for the battery and also the approximate \textbf{time remaining} until fully charged or fully drained. The app saves all the charging/discharging history, in daily summarizes in a local database, and estimates also the \textbf{battery consumption per application}. An Android \textbf{background service} will watch over the battery consumption also when the screen is off.
-
-The application contacts several \textbf{online services}. The purpose of these online services is to perform calculations using intelligent algorithms. An online service determines the \textbf{remaining cycles} that can be used from the battery. Another online service checks for \textbf{abnormal behavior}. A third online service collects \textbf{anonymous data} from users in order to improve prediction performance.
-
-The application also has a function to \textbf{optimize} the battery saving. Users can access shortcuts to \textbf{dark mode}, lower \textbf{brightness} or change \textbf{timeout} on screen, or, with the permission of the user, the app can \textbf{kill the application} that uses more battery.
-
-It seems possible to create a useful application based on this project without special Android permission or rooted devices, in order to \textbf{educate} the common user on the correct usage of the battery and its optimization.
+People use their smartphones a lot during the day, to communicate, study, play games or work. Because of this, the battery of the smartphone is very important, however the average user doesn't know anything about it other than the percentage left. They do not know the actual state of the battery, which applications consume battery rapidly or if they are charging it in the right way or not. In this project we developed a new application for Android, named ``EcoBattLens'' that will perform several functions in a single application. This will observe the battery in real time, keep history, predict the state of the battery and calculate which apps consume the most battery along with suggestions to conserve battery. The app was built by using several different tools. Flutter was used for the UI part, the core application logic was implemented in Dart and to interface with Android, Kotlin was used. SQLite was used to store data locally in the device. Also the app makes calls to online services in order to get smarter predictions.The application collects various data from the battery: charge level, current, voltage and temperature, also it detects if the phone is charging or not. By processing the data collected, the app determines several parameters that describe the battery. The parameters are: battery health in percentage, a confidence value on how much the application is confident on the percentage calculated, a stress score for the battery and also the approximate time remaining until fully charged or fully drained. The app saves all the charging/discharging history, in daily summarizes in a local database, and estimates also the battery consumption per application. An Android background service will watch over the battery consumption also when the screen is off. The application contacts several online services. The purpose of these online services is to perform calculations using intelligent algorithms. An online service determines the remaining cycles that can be used from the battery. Another online service checks for abnormal behavior. A third online service collects anonymous data from users in order to improve prediction performance.The application also has a function to optimize the battery saving. Users can access shortcuts to dark mode, lower brightness or change timeout on screen, or, with the permission of the user, the app can kill the application that uses more battery. It seems possible to create a useful application based on this project without special Android permission or rooted devices, in order to educate the common user on the correct usage of the battery and its optimization.
 
 \clearpage
 
@@ -219,7 +334,7 @@ It seems possible to create a useful application based on this project without s
 
 \section{Introduction}
 
-This is perhaps one of the most crucial components of the modern smartphone. A great battery would allow the users to forget about the worry of getting their phone charged. But the bad battery would force them to look for chargers every now and then. But what people look at is just the small battery icon at the top of the phone which only shows the amount of charge present in it. But it does not reflect the health of the battery or whether it is getting weak. Neither does it state that an application may be consuming a lot of battery. It does not mention whether the battery is under a lot of strain and might be damaged in the long run. To eliminate these problems we developed the \textbf{Battery Analyzer}. It is an application that constantly monitors the battery of the phone and gathers lots of data at regular intervals. All the gathered data can then be converted to easily understandable data and users can easily comprehend the condition of their battery and get tips on how to maintain it well.
+This is perhaps one of the most crucial components of the modern smartphone. A great battery would allow the users to forget about the worry of getting their phone charged. But the bad battery would force them to look for chargers every now and then. But what people look at is just the small battery icon at the top of the phone which only shows the amount of charge present in it. But it does not reflect the health of the battery or whether it is getting weak. Neither does it state that an application may be consuming a lot of battery. It does not mention whether the battery is under a lot of strain and might be damaged in the long run. To eliminate these problems we developed the EcoBattLens. It is an application that constantly monitors the battery of the phone and gathers lots of data at regular intervals. All the gathered data can then be converted to easily understandable data and users can easily comprehend the condition of their battery and get tips on how to maintain it well.
 
 \section{Background and Problem Statement}
 
@@ -356,7 +471,7 @@ This was a two student project, so we split the work like this:
 For big parts like making the whole architecture, we worked together.
 
 \section{How This App Can Be Used}
-Battery Analyzer can be useful in many situations:
+EcoBattLens can be useful in many situations:
 
 \begin{itemize}
     \item A person who wants to know if their phone battery is still healthy.
@@ -403,7 +518,7 @@ Battery apps usually fall into four groups:
     The body of work for state of health estimation indicated that capacity fade can be monitored through the measurement of current, voltage, temperature, and cycles [4]. The reason that Li-ion batteries have capacity fade is due to heat, fast charging rates, and deep cycling [5]. These models that have been developed are all lab based, not practical for consumer Android application usage due to lack of exposure of exact hardware signals through the Android API.
     
     \item \textbf{Machine Learning Models for Battery Prediction} \\
-    XGBoost model for RUL prediction and Isolation Forest model for anomaly detection, amongst others, have been tested on publicly available datasets like NASA and CALCE [6,7]. With Battery Analyzer, we integrate a backend system utilizing these very models to provide research-standard predictions in an easily accessible way via the Android application platform.
+    XGBoost model for RUL prediction and Isolation Forest model for anomaly detection, amongst others, have been tested on publicly available datasets like NASA and CALCE [6,7]. With EcoBattLens, we integrate a backend system utilizing these very models to provide research-standard predictions in an easily accessible way via the Android application platform.
 \end{enumerate}
 
 The majority of available solutions suffer from at least one of the following flaws:
@@ -418,13 +533,13 @@ The majority of available solutions suffer from at least one of the following fl
 \section{Comparative Discussion}
 
 \begin{table}[H]
-\caption{Feature comparison between existing tools and Battery Analyzer}
+\caption{Feature comparison between existing tools and EcoBattLens}
 \centering
 \small
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Feature} & \textbf{Basic Apps} & \textbf{Saver Tools}
-                 & \textbf{Research} & \textbf{Battery Analyzer}\\
+                 & \textbf{Research} & \textbf{EcoBattLens}\\
 \midrule
 Real-time battery level     & Yes  & Limited & Sometimes & Yes\\
 Voltage \& temperature      & Sometimes & Rare  & Yes  & Yes\\
@@ -453,14 +568,14 @@ These features make our application unique as follows:
 
 Such an integration cannot be observed in any of the applications. We have designed a full-scale system.
 \section{Conclusion}
-One additional reason we decided to conduct this research is that we were interested in understanding what others had done in terms of solving problems in this domain. We saw a lot of different tools and solutions that helped tackle parts of our problem. At Battery Analyzer, we wanted to combine these parts into one tool.
+One additional reason we decided to conduct this research is that we were interested in understanding what others had done in terms of solving problems in this domain. We saw a lot of different tools and solutions that helped tackle parts of our problem. At EcoBattLens, we wanted to combine these parts into one tool.
 % ============================================================
 %  CHAPTER III — METHODOLOGY
 % ============================================================
 \chapter{Methodology}
 
 \section{Introduction}
-In this chapter, the process of building Battery Analyzer is explained, indicating the measures that were followed during the design and construction of the program. The architectural design of the software and the flow of information from the battery to the screen are explained here.
+In this chapter, the process of building EcoBattLens is explained, indicating the measures that were followed during the design and construction of the program. The architectural design of the software and the flow of information from the battery to the screen are explained here.
 \section{How We Did the Work Step by Step}
 \subsection{Understanding the Problem and Setting Requirements}
 Then we came up with some questions:
@@ -491,7 +606,7 @@ Then we came up with some questions:
 
 \subsection{Tools and Technologies We Used}
 \begin{table}[H]
-\caption{Tools and technologies used in Battery Analyzer}
+\caption{Tools and technologies used in EcoBattLens}
 \centering
 \small
 \begin{tabular}{lll}
@@ -548,9 +663,9 @@ The application is structured using five layers:
 \end{figure}
 
 These two screens appear right at the beginning for a new user.
-The \textbf{Welcome Screen} (figure on the left) welcomes the user with a battery image and a
+The Welcome Screen (figure on the left) welcomes the user with a battery image and a
 \textit{Get Started} button. When clicked, this takes the user to the
-\textbf{Interactive App Tour} (figure on the right). The tour involves the
+Interactive App Tour (figure on the right). The tour involves the
 spotlight method for demonstrating features associated with each tab. Once done,
 the app will directly launch into its home screen from the next time onwards.
 \subsection{Methodology Flowchart of The App}
@@ -558,7 +673,7 @@ the app will directly launch into its home screen from the next time onwards.
 It operates in a cycle as follows:
 
 \begin{enumerate}
-  \item The user launches the app and presses \textbf{Start}.
+  \item The user launches the app and presses Start.
   \item The app retrieves any preserved state information from the Shared Preferences.
   \item The Kotlin foreground service begins running and displays an ongoing notification.
   \item Every five seconds, the native code fetches battery parameters and pushes
@@ -576,9 +691,9 @@ It operates in a cycle as follows:
 
 \subsection{How Data Flows Throughout the app}
 
-So, what goes on here? Android system's built-in class \texttt{BatteryManager}, which is aware of all the details regarding the battery, emits new battery data whenever new data becomes available. In our application, the \textbf{Kotlin service} listens to these emissions, prepares a simple map of the battery readings, and then forwards the data to the Flutter side using a \textbf{method channel}, which is similar to passing notes through a crack in a wall.
+So, what goes on here? Android system's built-in class \texttt{BatteryManager}, which is aware of all the details regarding the battery, emits new battery data whenever new data becomes available. In our application, the Kotlin service listens to these emissions, prepares a simple map of the battery readings, and then forwards the data to the Flutter side using a method channel, which is similar to passing notes through a crack in a wall.
 
-Once Flutter gets this data, \texttt{RealBatteryService} converts this data to a \texttt{BatteryData} object and then calculates the health, stress levels, and all other values. Once done with these calculations, the \texttt{RealBatteryService} broadcasts the results through a \textbf{stream}.
+Once Flutter gets this data, \texttt{RealBatteryService} converts this data to a \texttt{BatteryData} object and then calculates the health, stress levels, and all other values. Once done with these calculations, the \texttt{RealBatteryService} broadcasts the results through a stream.
 
 Finally, the \texttt{HomeScreen} uses a \texttt{StreamBuilder} widget to listen to the stream of results coming from \texttt{RealBatteryService}. Once new results come, this builder changes the contents of the currently active tab.
 \subsection{Database Design}
@@ -710,7 +825,7 @@ strong indicator of internal degradation.
 \subsection{App-Level Battery Attribution}
 
 Third-party applications do not have precise information about the power consumption of the applications from Android.
-Battery Analyzer employs a heuristic approach. After providing access to Usage data,
+EcoBattLens employs a heuristic approach. After providing access to Usage data,
 the app determines the foreground application through
 \texttt{UsageStatsManager}. For each cycle, the battery usage is apportioned between the foreground and background as follows:
 
@@ -768,14 +883,14 @@ The app is made up of two top tabs that are navigated using a segmented control:
         cycles left and an AI suggestions panel
 \end{itemize}
 \section{Conclusion}
-These five basic elements have been outlined for the Battery Analyzer application: The Android component which will continuously track the battery; The Flutter-based interfaces offered to the end-user; The mathematical formulas used for evaluating the battery's condition; The local database; and the cloud APIs.
+These five basic elements have been outlined for the EcoBattLens application: The Android component which will continuously track the battery; The Flutter-based interfaces offered to the end-user; The mathematical formulas used for evaluating the battery's condition; The local database; and the cloud APIs.
 Each design choice was carefully considered based on the constraints and advantages of a normal Android application, which means it will not use rooting and other forms of hacky practices.
 % ============================================================
 %  UML DIAGRAMS SECTION
 % ============================================================
 \chapter{UML Diagrams}
 
-In this chapter, all the UML diagrams are described that describe the architecture and behaviors of Battery Analyzer. Static aspects include class diagram, component diagram, and deployment diagram, while dynamic behavior diagrams include sequence diagram, state diagram, and activity diagram.
+In this chapter, all the UML diagrams are described that describe the architecture and behaviors of EcoBattLens. Static aspects include class diagram, component diagram, and deployment diagram, while dynamic behavior diagrams include sequence diagram, state diagram, and activity diagram.
 % ------------------------------------------------------------
 %  1. CLASS DIAGRAM — full landscape page
 % ------------------------------------------------------------
@@ -785,23 +900,59 @@ The class diagram below captures all major classes, their attributes and
 operations, and the relationships between them. The diagram spans the entire page
 in portrait orientation while preserving the breadth of the class hierarchy.
 
+% \begin{figure}[p]
+%   \centering
+%     \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]%
+%       {UML/Class.png}
+%     \caption{Class diagram of EcoBattLens — full class hierarchy and
+%              relationships}
+%     \label{fig:class_diagram}
+% \end{figure}
+
 \begin{figure}[p]
   \centering
     \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]%
-      {UML/Class.png}
-    \caption{Class diagram of Battery Analyzer — full class hierarchy and
-             relationships}
+      {UML/class_1.png}
+    \caption{Class diagram of EcoBattLens — full class hierarchy and
+             relationships part 1}
     \label{fig:class_diagram}
 \end{figure}
 
+\begin{figure}[p]
+  \centering
+    \includegraphics[width=\textwidth,height=0.85\textheight,keepaspectratio]%
+      {UML/class_2.png}
+    \caption{Class diagram of EcoBattLens — full class hierarchy and
+             relationships part 2}
+    \label{fig:class_diagram}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \rotatebox{90}{\includegraphics[width=1\textheight,height=0.95\textwidth,keepaspectratio]%
+    {UML/class_3.png}}
+  \caption{Class diagram of EcoBattLens — full class hierarchy and
+           relationships part 3 (rotated)}
+  \label{fig:class_diagram_3}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \rotatebox{90}{\includegraphics[width=1\textheight,height=0.95\textwidth,keepaspectratio]%
+    {UML/class_4.png}}
+  \caption{Class diagram of EcoBattLens — full class hierarchy and
+           relationships part 4 (rotated)}
+  \label{fig:class_diagram_4}
+\end{figure}
+\clearpage
 % ------------------------------------------------------------
 %  2. USE CASE DIAGRAM
 % ------------------------------------------------------------
 \section{Use Case Diagram}
 
 The actors and their interaction with the system are illustrated in Fig.~\ref{fig:use_case}.
-The main actor is the \textbf{User}, which triggers all monitoring and optimization operations.
-The \textbf{Backend API} actor is involved in all AI-based use case scenarios, while the \textbf{Android Platform} provides the battery data and system settings.
+The main actor is the User, which triggers all monitoring and optimization operations.
+The Backend API actor is involved in all AI-based use case scenarios, while the Android Platform provides the battery data and system settings.
 \begin{figure}[H]
   \centering
   % \includesvg[width=0.82\textwidth]{UML/use_case_diagram}
@@ -817,14 +968,14 @@ The \textbf{Backend API} actor is involved in all AI-based use case scenarios, w
 \section{Sequence Diagram}
 
 Figure~\ref{fig:sequence} depicts a sequence diagram that describes the communication process in terms of
-message passing during \textbf{App Launch to Home Screen}. The following figure shows a call sequence from the time the user launches the application until \texttt{BatteryAnalyzerApp} creates \texttt{LaunchFlowScreen}, loads \texttt{tour} data from \texttt{SharedPreferences}, displays \texttt{QuickTourPage}, then launches the home screen.
-\begin{figure}[p]
+message passing during App Launch to Home Screen. The following figure shows a call sequence from the time the user launches the application until \texttt{BatteryAnalyzerApp} creates \texttt{LaunchFlowScreen}, loads \texttt{tour} data from \texttt{SharedPreferences}, displays \texttt{QuickTourPage}, then launches the home screen.
+\begin{figure}[H]
   \centering
-    \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]%
-      {UML/Sequence.png}
-    \caption{Sequence diagram — app launch flow from start to home screen with
-             optional quick tour}
-    \label{fig:sequence}
+  \rotatebox{90}{\includegraphics[width=1.0\textheight,height=0.95\textwidth,keepaspectratio]%
+    {UML/Sequence.png}}
+  \caption{Sequence diagram — app launch flow from start to home screen with
+           optional quick tour (rotated)}
+  \label{fig:sequence}
 \end{figure}
 
 % ------------------------------------------------------------
@@ -832,7 +983,7 @@ message passing during \textbf{App Launch to Home Screen}. The following figure 
 % ------------------------------------------------------------
 \section{State Diagrams}
 
-Three state machines govern the runtime behaviour of Battery Analyzer. Each is
+Three state machines govern the runtime behaviour of EcoBattLens. Each is
 presented in its own sub-section below.
 
 \subsection{Launch Flow State Machine}
@@ -891,7 +1042,7 @@ session ends, the machine moves to \textit{SessionCompleted}, which creates a
 % ------------------------------------------------------------
 \section{Activity Diagram}
 
-The activity diagram models the \textbf{App Launch and Navigation} workflow.
+The activity diagram models the App Launch and Navigation workflow.
 The diagram (left) is presented alongside a step-by-step explanation (right) on
 the same page for easy cross-reference.
 
@@ -953,21 +1104,22 @@ the same page for easy cross-reference.
 \section{Data Flow Diagram}
 
 Figure~\ref{fig:data_flow} presents the Level-1 data flow diagram. Four external
-entities are shown: \textbf{User}, \textbf{Android Platform APIs},
-\textbf{Remote Backend APIs}, and the two persistent data stores
+entities are shown: User, Android Platform APIs,
+Remote Backend APIs, and the two persistent data stores
 (\textit{SharedPreferences} and \textit{SQLite}). The four core processes —
 Launch Flow Controller (P1), Home UI Controller (P2), Battery Monitoring Service
 (P3), and Local Persistence (P4) — are connected by labelled data flows.
 
-\begin{figure}[p]
-  \centering
-    \includegraphics[width=\textwidth,height=0.84\textheight,keepaspectratio]%
-      {UML/DataFlow_portrait.png}
-    \caption{Level-1 data flow diagram — external entities, core processes, and
-             data stores}
-    \label{fig:data_flow}
-\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \rotatebox{90}{\includegraphics[width=1.0\textheight,height=0.95\textwidth,keepaspectratio]%
+    {UML/dfd.png}}
+  \caption{Level-1 data flow diagram — external entities, core processes, and
+           data stores (rotated)}
+  \label{fig:data_flow}
+\end{figure}
+\clearpage
 % ------------------------------------------------------------
 %  7. COMPONENT DIAGRAM
 % ------------------------------------------------------------
@@ -1014,7 +1166,7 @@ with its PostgreSQL+TimescaleDB database. The two nodes communicate over HTTPS.
 \chapter{Implementation, Results and Discussions}
 
 \section{Introduction}
-In this chapter, we explain the steps taken to develop the Battery Analyzer, and what tests we conducted and what the outcomes were. We demonstrate that each aim we set out was achieved. We show some screen shots of the application along with an explanation.
+In this chapter, we explain the steps taken to develop the EcoBattLens, and what tests we conducted and what the outcomes were. We demonstrate that each aim we set out was achieved. We show some screen shots of the application along with an explanation.
 
 \section{Experimental Setup}
 
@@ -1163,7 +1315,7 @@ The PowerShield sub-tab gives three quick-saving buttons:
         when idle.
 \end{itemize}
 
-A \textbf{Display optimisation} section below links to the Android display settings
+A Display optimisation section below links to the Android display settings
 screen where the user can lower refresh rate, disable Always-On Display, and adjust
 OEM-specific display-saving features. A note at the top clearly states that
 brightness and timeout changes need Android system settings access, and a
@@ -1179,8 +1331,8 @@ permission button is shown when access has not yet been granted.
 \end{figure}
 
 Figure~\ref{fig:batterypulse} shows the BatteryPulse sub-tab. The
-\textbf{AI Prediction} panel at the top displays the estimated number of charge
-cycles remaining (from the XGBoost backend model). The \textbf{AI Suggestions}
+AI Prediction panel at the top displays the estimated number of charge
+cycles remaining (from the XGBoost backend model). The AI Suggestions
 panel below provides five topic buttons — Best Time to Charge, Battery Heat
 Analysis, Health Check, Charging Habits, and Fast Charging Impact — which the user
 can tap to receive personalised advice based on their own battery data.
@@ -1189,10 +1341,10 @@ can tap to receive personalised advice based on their own battery data.
 
 The AI layer has three pillars, each targeting a different analytical need.
 
-\textbf{Pillar 1 — Remaining Useful Life (RUL) Prediction}
+Pillar 1 — Remaining Useful Life (RUL) Prediction
 
 The algorithm XGBoost used in the backend accepts as input the parameters passed through the request body and includes 12 parameters, which are (cycles run, average current, average voltage, charge, discharge, cycle duration, state of health \%, Coefficient of Variation of current, average power, and Coulombic efficiency) and produces the number of additional cycles that the battery will be able to sustain before hitting its maximum capacity of 80\% of its maximum capacity, and the degree of certainty (high/medium/low).
-\textbf{Pillar 2 — Anomaly Detection}
+Pillar 2 — Anomaly Detection
 
 Isolation Forest Model
 An Isolation Forest model measures the input data against the profiles that have been learned and identifies five types of anomalies:
@@ -1287,7 +1439,7 @@ Tabbed UI              & Done & Five tabs plus Optimisation section\\
 
 \section{Conclusion}
 
-The Battery Analyzer works as a complete system, as intended. The aims were achieved. Actual screenshots can be found to demonstrate live-monitoring, session-saving, trend analysis and optimization tools are functioning within the scope of a standard Android application.
+The EcoBattLens works as a complete system, as intended. The aims were achieved. Actual screenshots can be found to demonstrate live-monitoring, session-saving, trend analysis and optimization tools are functioning within the scope of a standard Android application.
 
 % ============================================================
 %  CHAPTER V — SHEELC ISSUES
@@ -1296,7 +1448,7 @@ The Battery Analyzer works as a complete system, as intended. The aims were achi
 
 \section{Intellectual Property Considerations}
 
-All libraries and frameworks employed by Battery Analyzer are free and open source.
+All libraries and frameworks employed by EcoBattLens are free and open source.
 All third-party libraries are utilized in accordance with their individual open-source licenses.
 The NASA and CALCE battery datasets utilized in training the backend models are attributed
 to their respective originators.
@@ -1330,7 +1482,7 @@ and Google Play Store regulations.
 
 In Bangladesh and elsewhere, where mobile phones dominate computing, the battery’s
 performance plays a critical role in learning, communication, and business. By allowing
-users to optimize the life of their phone’s batteries, Battery Analyzer ensures that users
+users to optimize the life of their phone’s batteries, EcoBattLens ensures that users
 are able to use the device continuously, thereby ensuring participation in the digital age.
 
 Healthwise, early detection of any anomaly, particularly temperature issues, can help
@@ -1338,7 +1490,7 @@ prevent a battery problem from causing injury to the user.
 
 \section{Impact on Environment and Sustainability}
 With each device that experiences premature death because of incorrect battery charging practices, electronic waste is generated.
-Battery Analyzer prevents battery failure and improves longevity with actionable data on
+EcoBattLens prevents battery failure and improves longevity with actionable data on
 damaging charging behavior. An even slight increase in battery lifetime can make a significant
 difference in reducing hazardous waste, when applied across hundreds and thousands of devices.
 The application itself is optimized to consume less than 2\% battery power hourly.
@@ -1424,7 +1576,7 @@ Output conveyance              & Outputs tagged with confidence annotations; est
 
 \section{Summary}
 
-This was a project to build, \textbf{Battery Analyzer}; An Android app for battery monitoring and analysis which merges live telemetry data, State-of-Health calculation, stress scoring, historical session tracking, application-specific attribution, daily stats, prediction based on AI and shortcuts for optimizing usage, all within one, simple to use Flutter application which runs on standard Android devices, doesn't require root and doesn't use custom device permissions from manufacturers. Real screenshots were taken that verify the functionality of all intended features.
+This was a project to build, EcoBattLens; An Android app for battery monitoring and analysis which merges live telemetry data, State-of-Health calculation, stress scoring, historical session tracking, application-specific attribution, daily stats, prediction based on AI and shortcuts for optimizing usage, all within one, simple to use Flutter application which runs on standard Android devices, doesn't require root and doesn't use custom device permissions from manufacturers. Real screenshots were taken that verify the functionality of all intended features.
 
 \section{Limitations}
 

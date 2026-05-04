@@ -1,21 +1,21 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1.1}{\ignorespaces Project timeline (weeks)}}{4}{table.caption.3}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Feature comparison between existing tools and Battery Analyzer}}{7}{table.caption.4}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Feature comparison between existing tools and EcoBattLens}}{8}{table.caption.4}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Tools and technologies used in Battery Analyzer}}{10}{table.caption.5}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces SQLite schema for daily aggregated battery statistics}}{13}{table.caption.7}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Stress score components and their thresholds}}{14}{table.caption.8}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces API endpoints and their roles}}{15}{table.caption.9}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tools and technologies used in EcoBattLens}}{11}{table.caption.5}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces SQLite schema for daily aggregated battery statistics}}{14}{table.caption.7}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Stress score components and their thresholds}}{16}{table.caption.8}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces API endpoints and their roles}}{17}{table.caption.9}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Experimental setup and test environment}}{27}{table.caption.20}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Metrics employed in evaluating the system}}{27}{table.caption.21}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces AI performance benchmarks and expected outcomes}}{33}{table.caption.25}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Sample battery readings from test sessions}}{34}{table.caption.26}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Mapping of objectives to implementation evidence}}{35}{table.caption.27}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Experimental setup and test environment}}{36}{table.caption.23}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Metrics employed in evaluating the system}}{37}{table.caption.24}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces AI performance benchmarks and expected outcomes}}{43}{table.caption.28}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Sample battery readings from test sessions}}{44}{table.caption.29}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Mapping of objectives to implementation evidence}}{45}{table.caption.30}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Summary of SHEELC concerns}}{37}{table.caption.28}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Summary of SHEELC concerns}}{48}{table.caption.31}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Complicated engineering tasks along with their corresponding solutions}}{39}{table.caption.29}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Complicated engineering tasks along with their corresponding solutions}}{50}{table.caption.32}%
 \addvspace {10\p@ }

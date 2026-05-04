@@ -1,22 +1,25 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces App entry flow: Welcome screen and interactive first-launch tour}}{11}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces App entry flow: Welcome screen and interactive first-launch tour}}{12}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Use case diagram showing system boundary, actors, and functional interactions}}{18}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Class diagram of Battery Analyzer — full class hierarchy and relationships}}{19}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Sequence diagram — app launch flow from start to home screen with optional quick tour}}{19}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Launch flow state machine — from app start to home dashboard}}{20}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Monitoring lifecycle state machine — \texttt {RealBatteryService} operational states}}{21}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Battery session state machine — charge/discharge cycle tracking inside \texttt {RealBatteryService}}}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Activity diagram — app launch and navigation workflow}}{23}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Component diagram — software components, interfaces, and dependencies}}{24}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Deployment diagram — runtime environments and communication links}}{25}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Level-1 data flow diagram — external entities, core processes, and data stores}}{26}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Class diagram of EcoBattLens — full class hierarchy and relationships part 1}}{20}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Class diagram of EcoBattLens — full class hierarchy and relationships part 2}}{21}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Class diagram of EcoBattLens — full class hierarchy and relationships part 3 (rotated)}}{22}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Class diagram of EcoBattLens — full class hierarchy and relationships part 4 (rotated)}}{23}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Use case diagram showing system boundary, actors, and functional interactions}}{24}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Sequence diagram — app launch flow from start to home screen with optional quick tour (rotated)}}{26}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Launch flow state machine — from app start to home dashboard}}{28}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Monitoring lifecycle state machine — \texttt {RealBatteryService} operational states}}{29}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Battery session state machine — charge/discharge cycle tracking inside \texttt {RealBatteryService}}}{30}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Activity diagram — app launch and navigation workflow}}{31}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Level-1 data flow diagram — external entities, core processes, and data stores (rotated)}}{33}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Component diagram — software components, interfaces, and dependencies}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Deployment diagram — runtime environments and communication links}}{35}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview tab shown in light and dark themes during a discharge session}}{29}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces History tab and Battery Optimisation screen}}{30}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces BatteryPulse sub-tab showing AI Prediction and AI Suggestion cards}}{32}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overview tab shown in light and dark themes during a discharge session}}{38}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces History tab and Battery Optimisation screen}}{40}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces BatteryPulse sub-tab showing AI Prediction and AI Suggestion cards}}{42}{figure.caption.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
